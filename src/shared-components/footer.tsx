@@ -1,31 +1,134 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export const Footer = () => {
-    return (
-         <footer className="mt-12 bg-[#0f274a] text-slate-200">
-        <div className="container mx-auto px-4 md:px-8 py-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div>
-              <div className="text-white font-semibold text-lg">Reliance</div>
-              <p className="text-sm mt-2">Soho West Point, Jalan Macan Kav. 4 - 5, Kedoya Utara, Kebon Jeruk - Jakarta Barat 11520</p>
-            </div>
+  return (
+    <footer className="bg-[#081A4B] text-white pt-16 pb-10 mt-20">
+      <div className="container mx-auto px-6 md:px-12 lg:px-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <Image src="/logo.png" width={180} height={60} alt="Reliance Logo" className="mb-6" />
 
-            <div>
-              <h4 className="font-medium">Berlangganan</h4>
-              <p className="text-sm mt-2">Masukkan email untuk mendapatkan informasi terbaru</p>
-              <div className="mt-3 flex gap-2">
-                <input className="rounded-l px-3 py-2 text-slate-800" placeholder="Masukan email anda..." />
-                <button className="rounded-r bg-amber-600 px-4">Mulai Langganan</button>
+            {/* Address */}
+            <div className="space-y-5 text-[15px] leading-relaxed">
+              <div className="flex gap-3">
+                <svg
+                  className="w-6 h-6 text-white/90"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 11.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19.5 10.5c0 7-7.5 11-7.5 11S4.5 17.5 4.5 10.5a7.5 7.5 0 1115 0z"
+                  />
+                </svg>
+                <p>
+                  Soho West Point, Jalan Macan Kav. 4 – 5, Kedoya Utara, Kebon Jeruk - Jakarta Barat
+                  11520
+                </p>
               </div>
-            </div>
 
-            <div>
-              <h4 className="font-medium">Kontak</h4>
-              <p className="text-sm mt-2">(021) 21192288</p>
-              <p className="text-sm">corporate@rmv.co.id</p>
+              {/* Phone */}
+              <div className="flex gap-3">
+                <svg
+                  className="w-6 h-6 text-white/90"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M2.25 4.5l3-1a2 2 0 012.1.5l2.2 2.2a2 2 0 01.5 2.1l-1 3a16 16 0 006.3 6.3l3-1a2 2 0 012.1.5l2.2 2.2a2 2 0 01.5 2.1l-1 3"
+                  />
+                </svg>
+                <p>(021) 21192288</p>
+              </div>
+
+              {/* Email */}
+              <div className="flex gap-3">
+                <svg
+                  className="w-6 h-6 text-white/90"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M2.25 6.75L12 13.5l9.75-6.75"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M2.25 17.25V6.75l19.5 10.5"
+                  />
+                </svg>
+                <p>corporate@rmv.co.id</p>
+              </div>
+
+              <p className="text-[14px] text-white/80 pt-2">
+                PT. Reliance Modal Ventura terdaftar dan diawasi oleh Otoritas Jasa Keuangan
+              </p>
             </div>
           </div>
 
-          <div className="mt-8 text-center text-xs opacity-70">© Copyright 2025 All Rights Reserved. | Reliance Modal Ventura</div>
+          {/* RIGHT SIDE — SUBSCRIPTION */}
+          <div>
+            <h3 className="font-serif text-3xl mb-3">Berlangganan</h3>
+            <p className="text-white/90 text-[15px] leading-relaxed mb-6 max-w-md">
+              Berlangganan untuk Langganan untuk mengetahui informasi terbaru dari kami
+            </p>
+
+            <div className="bg-white rounded-2xl flex items-center p-2 pr-1 w-full max-w-xl shadow-md">
+              <input
+                type="email"
+                placeholder="Masukkan email anda..."
+                className="flex-1 outline-none text-[#081A4B] px-4 py-3 rounded-xl"
+              />
+              <button className="rounded-xl bg-[#081A4B] text-white px-6 py-3 text-sm font-medium">
+                Mulai Langganan
+              </button>
+            </div>
+          </div>
         </div>
-      </footer>
-    )
-}
+
+        <div className="w-full border-t border-white/20 my-10"></div>
+
+        <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-white/70 text-sm">
+            © Copyright 2025 All Rights Reserved. | Reliance Modal Ventura
+          </p>
+
+          <div className="flex gap-5 text-white">
+            <Link href="#">
+              <svg className="w-6 h-6" fill="currentColor">
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </Link>
+            <Link href="#">
+              <svg className="w-6 h-6" fill="currentColor">
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </Link>
+            <Link href="#">
+              <svg className="w-6 h-6" fill="currentColor">
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
