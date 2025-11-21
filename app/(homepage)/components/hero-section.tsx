@@ -30,7 +30,7 @@ export const HeroSection = () => {
           minHeight: `calc(100vh - ${headerHeight}px)`,
         }}
       >
-        <Image src="/hero-bg.jpg" alt="hero" fill className="object-cover object-center" priority />
+        <Image src="/reliance-office.jpg" alt="hero" fill className="object-cover object-center" priority />
 
         <div className="absolute inset-0" style={{ background: "rgba(2,24,89,0.9)" }} />
 

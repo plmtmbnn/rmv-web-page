@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const SolutionSection = () => {
-  const shot1 = "/mnt/data/Screenshot 2025-11-20 at 00.05.23.png";
-  const shot2 = "/mnt/data/Screenshot 2025-11-20 at 00.05.30.png";
+  const shot1 = "/assests/reliance-office-100px.jpg";
+  const shot2 = "/assests/reliance-office-100px.jpg";
 
   return (
     <section className="w-full bg-[#021859] opacity-90 text-white py-16 mt-12">

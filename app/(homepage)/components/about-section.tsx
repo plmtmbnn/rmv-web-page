@@ -22,20 +22,20 @@ function ImageTile({ src, alt = "", className = "" }: TileProps) {
 }
 
 const rightVertical = [
-  "/about/about-1.png",
-  "/about/about-1.png",
-  "/about/about-1.png",
-  "/about/about-1.png",
+  "/assests/reliance-office-100px.jpg",
+  "/assests/reliance-office-100px.jpg",
+  "/assests/reliance-office-100px.jpg",
+  "/assests/reliance-office-100px.jpg",
 ];
 
 const bottomGrid = [
-  "/about/about-1.png",
-  "/about/about-1.png",
-  "/about/about-1.png",
-  "/about/about-1.png",
+  "/assests/reliance-office-100px.jpg",
+  "/assests/reliance-office-100px.jpg",
+  "/assests/reliance-office-100px.jpg",
+  "/assests/reliance-office-100px.jpg",
 ];
 
-const fallback = "/mnt/data/Screenshot 2025-11-19 at 23.50.31.png";
+const fallback = "/assests/reliance-office-100px.jpg";
 
 export const AboutSection: React.FC = () => {
   return (

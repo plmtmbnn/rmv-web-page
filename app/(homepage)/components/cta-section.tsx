@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const CTASection = () => {
-  const bg = "/mnt/data/Screenshot 2025-11-20 at 00.11.50.png";
+  const bg = "/assests/rupuah-idr.jpg";
 
   return (
     <section className="container mx-auto px-4 md:px-8 mt-12">
