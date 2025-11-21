@@ -1,0 +1,10 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+pnpm format
+
+# jika format menghasilkan perubahan, stop commit
+if ! git diff --quiet; then
+  echo "⛔ Files changed after formatting. Please stage them again."
+  exit 1
+fi
