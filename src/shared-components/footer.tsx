@@ -1,11 +1,20 @@
+import {
+	Instagram,
+	Linkedin,
+	Mail,
+	MapPin,
+	Phone,
+	Youtube,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export const Footer = () => {
 	return (
-		<footer className="bg-[#081A4B] text-white pt-16 pb-10 mt-20">
-			<div className="container mx-auto px-6 md:px-12 lg:px-20">
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+		<footer className="bg-[#081A4B] text-white mt-20">
+			<div className="container mx-auto px-6 md:px-12 lg:px-20 py-16">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+					{/* LEFT SECTION */}
 					<div>
 						<Image
 							src="/logo.png"
@@ -13,130 +22,134 @@ export const Footer = () => {
 							height={60}
 							alt="Reliance Logo"
 							className="mb-6"
+							priority
 						/>
 
-						{/* Address */}
-						<div className="space-y-5 text-[15px] leading-relaxed">
-							<div className="flex gap-3">
-								<svg
-									className="w-6 h-6 text-white/90"
-									fill="none"
-									stroke="currentColor"
-									strokeWidth="1.5"
-									viewBox="0 0 24 24"
-								>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										d="M12 11.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"
-									/>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										d="M19.5 10.5c0 7-7.5 11-7.5 11S4.5 17.5 4.5 10.5a7.5 7.5 0 1115 0z"
-									/>
-								</svg>
+						<div className="space-y-6 text-[15px] leading-relaxed">
+							{/* Address */}
+							<div className="flex items-start gap-4">
+								<MapPin className="w-6 h-6 text-white/90" />
 								<p>
-									Soho West Point, Jalan Macan Kav. 4 – 5, Kedoya Utara, Kebon
-									Jeruk - Jakarta Barat 11520
+									Soho West Point, Jalan Macan Kav. 4–5, Kedoya Utara, Kebon
+									Jeruk, Jakarta Barat 11520
 								</p>
 							</div>
 
 							{/* Phone */}
-							<div className="flex gap-3">
-								<svg
-									className="w-6 h-6 text-white/90"
-									fill="none"
-									stroke="currentColor"
-									strokeWidth="1.5"
-									viewBox="0 0 24 24"
+							<div className="flex items-start gap-4">
+								<Phone className="w-6 h-6 text-white/90" />
+								<a
+									href="tel:02121192288"
+									className="hover:text-white transition-colors"
 								>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										d="M2.25 4.5l3-1a2 2 0 012.1.5l2.2 2.2a2 2 0 01.5 2.1l-1 3a16 16 0 006.3 6.3l3-1a2 2 0 012.1.5l2.2 2.2a2 2 0 01.5 2.1l-1 3"
-									/>
-								</svg>
-								<p>(021) 21192288</p>
+									(021) 21192288
+								</a>
 							</div>
 
 							{/* Email */}
-							<div className="flex gap-3">
-								<svg
-									className="w-6 h-6 text-white/90"
-									fill="none"
-									stroke="currentColor"
-									strokeWidth="1.5"
-									viewBox="0 0 24 24"
+							<div className="flex items-start gap-4">
+								<Mail className="w-6 h-6 text-white/90" />
+								<a
+									href="mailto:corporate@rmv.co.id"
+									className="hover:text-white transition-colors"
 								>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										d="M2.25 6.75L12 13.5l9.75-6.75"
-									/>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										d="M2.25 17.25V6.75l19.5 10.5"
-									/>
-								</svg>
-								<p>corporate@rmv.co.id</p>
+									corporate@rmv.co.id
+								</a>
 							</div>
 
-							<p className="text-[14px] text-white/80 pt-2">
+							<p className="text-[13px] text-white/70 pt-3">
 								PT. Reliance Modal Ventura terdaftar dan diawasi oleh Otoritas
-								Jasa Keuangan
+								Jasa Keuangan.
 							</p>
 						</div>
 					</div>
 
-					{/* RIGHT SIDE — SUBSCRIPTION */}
+					{/* RIGHT SECTION */}
 					<div>
-						<h3 className="font-serif text-3xl mb-3">Berlangganan</h3>
-						<p className="text-white/90 text-[15px] leading-relaxed mb-6 max-w-md">
-							Berlangganan untuk Langganan untuk mengetahui informasi terbaru
-							dari kami
+						<h3 className="font-serif text-3xl mb-4">Berlangganan</h3>
+
+						<p className="text-white/80 text-[15px] leading-relaxed mb-8 max-w-md">
+							Dapatkan informasi terbaru dari kami langsung melalui email.
 						</p>
 
-						<div className="bg-white rounded-2xl flex items-center p-2 pr-1 w-full max-w-xl shadow-md">
+						{/* Responsive Wrapper */}
+						<div
+							className="
+		bg-white rounded-2xl shadow-lg w-full max-w-lg p-3 
+		flex flex-col gap-3
+		md:flex-row md:items-center md:gap-2
+	"
+						>
 							<input
 								type="email"
 								placeholder="Masukkan email anda..."
-								className="flex-1 outline-none text-[#081A4B] px-4 py-3 rounded-xl"
+								className="
+				flex-1 px-4 py-3 rounded-xl 
+				text-[#081A4B] outline-none 
+				placeholder:text-[#081A4B]/60
+				w-full
+			"
 							/>
-							<button className="rounded-xl bg-[#081A4B] text-white px-6 py-3 text-sm font-medium">
+
+							<button
+								className="
+				rounded-xl bg-[#081A4B] text-white 
+				px-6 py-3 text-sm font-medium 
+				hover:bg-[#0A2460] transition-colors
+				w-full md:w-auto
+			"
+							>
 								Mulai Langganan
 							</button>
 						</div>
 					</div>
 				</div>
 
-				<div className="w-full border-t border-white/20 my-10"></div>
+				{/* Divider */}
+				<hr className="border-white/20 my-12" />
 
-				<div className="w-full flex flex-col md:flex-row items-center justify-between gap-6">
+				{/* BOTTOM ROW */}
+				<div className="flex flex-col md:flex-row items-center justify-between gap-6">
 					<p className="text-white/70 text-sm">
-						© Copyright 2025 All Rights Reserved. | Reliance Modal Ventura
+						© {new Date().getFullYear()} All Rights Reserved · Reliance Modal
+						Ventura
 					</p>
 
+					{/* Social Icons */}
 					<div className="flex gap-5 text-white">
-						<Link href="#">
-							<svg className="w-6 h-6" fill="currentColor">
-								<circle cx="12" cy="12" r="3" />
-							</svg>
-						</Link>
-						<Link href="#">
-							<svg className="w-6 h-6" fill="currentColor">
-								<circle cx="12" cy="12" r="3" />
-							</svg>
-						</Link>
-						<Link href="#">
-							<svg className="w-6 h-6" fill="currentColor">
-								<circle cx="12" cy="12" r="3" />
-							</svg>
-						</Link>
+						<SocialIcon
+							href="https://linkedin.com"
+							icon={<Linkedin className="w-4 h-4" />}
+						/>
+						<SocialIcon
+							href="https://youtube.com"
+							icon={<Youtube className="w-4 h-4" />}
+						/>
+						<SocialIcon
+							href="https://instagram.com"
+							icon={<Instagram className="w-4 h-4" />}
+						/>
 					</div>
 				</div>
 			</div>
 		</footer>
 	);
 };
+
+/* ---------------- Social Icon Component ---------------- */
+const SocialIcon = ({
+	href,
+	icon,
+}: {
+	href: string;
+	icon: React.ReactNode;
+}) => (
+	<Link
+		href={href}
+		target="_blank"
+		rel="noopener noreferrer"
+		className="w-9 h-9 flex items-center justify-center rounded-full border border-white/30 hover:border-white hover:bg-white/10 transition"
+	>
+		{icon}
+	</Link>
+);

@@ -8,9 +8,10 @@ export const HeroSection = () => {
   const [headerHeight, setHeaderHeight] = useState(0);
 
   useEffect(() => {
-    const el = document.getElementById("site-header");
+    const header = document.getElementById("site-header");
+
     const measure = () => {
-      if (el) setHeaderHeight(el.getBoundingClientRect().height || 0);
+      if (header) setHeaderHeight(header.getBoundingClientRect().height || 0);
     };
 
     measure();
@@ -25,31 +26,38 @@ export const HeroSection = () => {
   return (
     <section className="relative">
       <div
-        className="w-full relative overflow-hidden"
-        style={{
-          minHeight: `calc(100vh - ${headerHeight}px)`,
-        }}
+        className="relative w-full overflow-hidden"
+        style={{ minHeight: `calc(100vh - ${headerHeight}px)` }}
       >
-        <Image src="/reliance-office.jpg" alt="hero" fill className="object-cover object-center" priority />
+        {/* Background Image */}
+        <Image
+          src="/reliance-office.jpg"
+          alt="hero"
+          fill
+          priority
+          className="object-cover object-center"
+        />
 
-        <div className="absolute inset-0" style={{ background: "rgba(2,24,89,0.9)" }} />
+        {/* Overlay with Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#021859e6] to-[#021859cc]" />
 
-        <div className="absolute inset-0 container mx-auto flex flex-col items-center justify-center px-6">
-          <h1 className="text-white text-4xl md:text-6xl font-serif text-center leading-tight max-w-3xl">
+        {/* Content */}
+        <div className="absolute inset-0 container mx-auto flex flex-col items-center justify-center px-6 text-center animate-fadeIn">
+          <h1 className="text-white text-4xl md:text-6xl font-serif leading-tight max-w-4xl drop-shadow-lg">
             Solusi Bisnis Terbaik
             <br />
             bagi Pengusaha Baru
           </h1>
 
-          <p className="text-slate-200 mt-6 max-w-2xl text-center">
-            Membantu Anda memulai usaha dengan lebih percaya diri melalui layanan dan dukungan yang
-            relevan untuk tahap awal bisnis.
+          <p className="text-slate-200 mt-6 max-w-2xl text-lg md:text-xl leading-relaxed">
+            Membantu Anda memulai usaha dengan lebih percaya diri melalui layanan dan dukungan 
+            yang relevan untuk tahap awal bisnis.
           </p>
 
-          <div className="mt-20 lg:mt-32">
+          <div className="mt-16 md:mt-24">
             <Link
               href="#contact"
-              className="rounded-full bg-white text-[#14264A] px-6 py-3 font-medium"
+              className="inline-block rounded-full bg-white text-[#14264A] px-8 py-3 md:px-10 md:py-4 font-semibold shadow-lg hover:bg-slate-100 transition-all duration-200"
             >
               Hubungi Kami
             </Link>
