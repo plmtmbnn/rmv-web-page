@@ -18,7 +18,7 @@ export const navLinks = [
 		label: "Hubungan Investor",
 		submenu: [
 			{ href: "/investor/reports", label: "Laporan Keuangan" },
-			{ href: "/investor/stock", label: "Berita dan Peristiwa" },
+			{ href: "/investor/news", label: "Berita dan Peristiwa" },
 		],
 	},
 	{
