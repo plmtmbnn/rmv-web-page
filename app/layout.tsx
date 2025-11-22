@@ -27,7 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Navbar />
+        
+        {/* --- Sticky navbar space to prevent layout shift --- */}
+        <div className="sticky top-0 z-50 bg-white shadow-sm">
+          <Navbar />
+        </div>
         {children}
         <Footer />
       </body>
