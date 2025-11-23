@@ -3,11 +3,14 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Member, members } from "@/app/management/constant";
+import { useLockBodyScroll } from "@/src/hooks/use-lock-body-scroll";
 
 export default function ManagementPage() {
   const [selected, setSelected] = useState<Member | null>(null);
 
   const closeModal = () => setSelected(null);
+
+   useLockBodyScroll(!!selected);
 
   return (
     <>
@@ -75,13 +78,13 @@ export default function ManagementPage() {
             <button
               type="button"
               onClick={closeModal}
-              className="absolute top-4 right-4 rounded-full p-1.5 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-[#14264A]"
+              className="absolute top-4 right-4 rounded-full p-1.5 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-[#14264A] text-black"
               aria-label="Close"
             >
-              <span className="block text-xl leading-none">&times;</span>
+              <span className="block text-2xl leading-none">&times;</span>
             </button>
 
-            <h2 className="text-lg font-semibold mb-4">Detail</h2>
+            <h2 className="text-lg text-black font-semibold mb-4">Detail</h2>
             <p className="whitespace-pre-line text-sm md:text-base leading-relaxed text-slate-800">
               {selected.detail}
             </p>
