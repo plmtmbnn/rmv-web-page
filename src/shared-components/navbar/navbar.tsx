@@ -42,10 +42,7 @@ export function Navbar() {
 	};
 
 	const headerClasses = [
-		"transition-all duration-500 ease-in-out z-50",
-		isScrolled
-			? "fixed top-0 left-0 right-0 bg-white/98 backdrop-blur-lg text-[#051b5a] shadow-xl border-b border-slate-100"
-			: "absolute top-0 left-0 right-0 bg-transparent text-white",
+		"transition-all duration-500 ease-in-out z-50 absolute top-0 left-0 right-0 bg-transparent text-white",
 	].join(" ");
 
 	return (
