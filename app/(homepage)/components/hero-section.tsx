@@ -39,7 +39,7 @@ export const HeroSection = () => {
         />
 
         {/* Overlay with Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#021859e6] to-[#021859cc]" />
+        <div className="absolute inset-0 bg-linear-to-b from-[#021859e6] to-[#021859cc]" />
 
         {/* Content */}
         <div className="absolute inset-0 container mx-auto flex flex-col items-center justify-center px-6 text-center animate-fadeIn">

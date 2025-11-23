@@ -1,47 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, TrendingUp, Shield, Banknote, Smartphone } from "lucide-react";
+import { ArrowRight,  Banknote, Smartphone } from "lucide-react";
+import { solutions } from "@/src/constants/solution";
+
+const reliid_logo = '/logo-reliid.png';
+
+export const shot1 = "/assests/reliance-office-100px.jpg";
+export const shot2 = "/assests/reliance-office-100px.jpg";
 
 export const SolutionSection = () => {
-  const shot1 = "/assests/reliance-office-100px.jpg";
-  const shot2 = "/assests/reliance-office-100px.jpg";
-  const reliid_logo = '/logo-reliid.png';
-
-  const solutions = [
-    {
-      title: "INVESTMENT",
-      description: "Melalui anak perusahaan kami yang terkait investasi, Reliance Sekuritas Indonesia dan Reliance Manajer Investasi, kami menawarkan kepada investor ritek semua alat yang mereka butuhkan untuk meningkatkan nilai aset.",
-      image: shot1,
-      icon: <TrendingUp className="w-8 h-8" />,
-      links: [
-        { label: "Website Reliance Sekuritas", href: "#" },
-        { label: "Website RMI", href: "#" }
-      ],
-      gradient: "from-blue-900/90 via-blue-800/80 to-blue-900/90"
-    },
-    {
-      title: "PROTECTION",
-      description: "Perusahaan menyediakan rangkaian lengkap produk asuransi untuk bisnis dan individu, melalui dua anak perusahaan asuransi (Asuransi Jiwa Reliance Indonesia dan Asuransi Reliance Indonesia)",
-      image: shot2,
-      icon: <Shield className="w-8 h-8" />,
-      links: [
-        { label: "Website AJRI", href: "#" },
-        { label: "Website ARI", href: "#" }
-      ],
-      gradient: "from-indigo-900/90 via-indigo-800/80 to-indigo-900/90"
-    }
-  ];
-
   return (
-    <section className="w-full bg-gradient-to-br from-[#021859] via-[#051b5a] to-[#021859] text-white py-20 mt-12 relative overflow-hidden">
-      {/* Decorative Background Elements */}
+    <section className="w-full bg-linear-to-br from-[#021859] via-[#051b5a] to-[#021859] text-white py-20 mt-12 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-        {/* Section Header */}
         <div className="mb-12 text-center lg:text-left">
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-4 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-4 bg-linear-to-r from-white to-blue-200 bg-clip-text text-transparent">
             Solusi Keuangan
           </h2>
           <p className="text-blue-100 text-lg max-w-2xl">
@@ -49,14 +24,12 @@ export const SolutionSection = () => {
           </p>
         </div>
 
-        {/* Main Solutions Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {solutions.map((solution, index) => (
             <article 
               key={solution.title}
-              className="group relative rounded-3xl overflow-hidden min-h-[320px] transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
+              className="group relative rounded-3xl overflow-hidden min-h-80 transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
             >
-              {/* Background Image */}
               <Image
                 src={solution.image}
                 alt={solution.title}
@@ -65,12 +38,9 @@ export const SolutionSection = () => {
                 priority={index === 0}
               />
               
-              {/* Gradient Overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} transition-all duration-500`}></div>
+              <div className={`absolute inset-0 bg-linear-to-br ${solution.gradient} transition-all duration-500`}></div>
               
-              {/* Content */}
               <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-between">
-                {/* Icon and Title */}
                 <div>
                   <div className="inline-flex items-center gap-3 mb-4 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
                     <div className="text-white">
@@ -85,7 +55,6 @@ export const SolutionSection = () => {
                   </p>
                 </div>
 
-                {/* Buttons */}
                 <div className="mt-6 flex flex-wrap gap-3">
                   {solution.links.map((link) => (
                     <Link
@@ -103,9 +72,7 @@ export const SolutionSection = () => {
           ))}
         </div>
 
-        {/* Middle Row: 3 Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {/* Logo Card */}
           <div className="group rounded-2xl bg-white p-8 flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
             <div className="w-full h-24 relative">
               <Image 
@@ -137,7 +104,7 @@ export const SolutionSection = () => {
           </div>
 
           {/* Financing Card */}
-          <div className="group col-span-1 md:col-span-2 rounded-2xl bg-gradient-to-br from-blue-800/80 to-indigo-800/80 backdrop-blur-sm p-8 flex flex-col justify-between shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02]">
+          <div className="group col-span-1 md:col-span-2 rounded-2xl bg-linear-to-br from-blue-800/80 to-indigo-800/80 backdrop-blur-sm p-8 flex flex-col justify-between shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02]">
             <div>
               <div className="inline-block p-3 bg-white/10 rounded-xl mb-4">
                 <Banknote className="w-6 h-6" />
@@ -167,10 +134,10 @@ export const SolutionSection = () => {
               fill
               className="object-cover object-center opacity-30 transition-all duration-700 group-hover:opacity-40 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#051b5a]/95 via-[#051b5a]/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-[#051b5a]/95 via-[#051b5a]/60 to-transparent"></div>
             
             <div className="absolute inset-0 p-8 md:p-10 flex items-end">
-              <div className="transform transition-all duration-500 group-hover:translate-y-[-8px]">
+              <div className="transform transition-all duration-500 group-hover:-translate-y-2">
                 <div className="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-semibold mb-3 border border-white/30">
                   FINANCIAL INCLUSION
                 </div>
@@ -199,10 +166,10 @@ export const SolutionSection = () => {
               fill 
               className="object-cover object-center opacity-30 transition-all duration-700 group-hover:opacity-40 group-hover:scale-110" 
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#051b5a]/95 via-[#051b5a]/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-[#051b5a]/95 via-[#051b5a]/60 to-transparent"></div>
             
             <div className="absolute inset-0 p-8 md:p-10 flex items-end">
-              <div className="transform transition-all duration-500 group-hover:translate-y-[-8px]">
+              <div className="transform transition-all duration-500 group-hover:-translate-y-2">
                 <div className="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-semibold mb-3 border border-white/30">
                   ECONOMIC GROWTH
                 </div>
