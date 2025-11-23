@@ -12,7 +12,7 @@ export default function ManagementPage() {
   return (
     <>
       <section className="bg-white">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12 py-16 md:py-20">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 mt-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-medium mb-10 md:mb-14">
             <span className="text-black">Manajemen </span>
             <span className="text-[#D25130]">Reliance Modal Ventura</span>
