@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Calendar, Tag, ArrowLeft, Share2, Facebook, Twitter, Linkedin, Clock } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { newsData, type NewsItemInterface } from "../news-list";
+import { newsData, type NewsItemInterface } from "../news-data-list";
 import { notFound } from "next/navigation";
 
 // Helper function to get news by slug
