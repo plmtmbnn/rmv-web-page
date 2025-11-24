@@ -31,7 +31,7 @@ export default function SolutionPage() {
 					{solutions.map((solution, index) => (
 						<article
 							key={solution.title}
-							className="group relative rounded-3xl overflow-hidden min-h-[400px] transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
+							className="group relative rounded-3xl overflow-hidden min-h-[465px] transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
 							style={{
 								animation: `fadeInUp 0.6s ease-out ${index * 0.2}s both`,
 							}}

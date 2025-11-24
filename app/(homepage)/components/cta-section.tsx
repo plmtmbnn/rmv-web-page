@@ -87,7 +87,7 @@ export const CTASection = () => {
 										<div className="lg:col-span-5 flex flex-col items-center lg:items-end gap-4">
 											{/* Primary Button */}
 											<Link
-												href="#contact"
+												href="contact"
 												className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-white text-[#051b5a] px-8 py-4 text-base font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
 												aria-label="Hubungi Kami Sekarang"
 											>

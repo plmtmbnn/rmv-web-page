@@ -91,7 +91,7 @@ export function Navbar() {
 											aria-haspopup="true"
 											className={`relative flex items-center gap-1.5 text-sm font-semibold transition-all duration-300 py-2 px-1 group ${
 												isScrolled
-													? "text-[#051b5a] hover:text-blue-700"
+													? "text-[#051b5a] hover:text-[#eb3527]"
 													: "text-white hover:text-blue-100"
 											}`}
 										>
@@ -115,7 +115,7 @@ export function Navbar() {
 											href={link.href}
 											className={`relative text-sm font-semibold transition-all duration-300 py-2 px-1 group ${
 												isScrolled
-													? "text-[#051b5a] hover:text-blue-700"
+													? "text-[#051b5a] hover:text-[#eb3527]"
 													: "text-white hover:text-blue-100"
 											}`}
 										>
@@ -146,7 +146,7 @@ export function Navbar() {
 														key={sublink.href}
 														href={sublink.href}
 														role="menuitem"
-														className="group/item flex items-center justify-between px-5 py-3 text-sm font-medium text-[#051b5a] hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 hover:text-blue-700 transition-all duration-200 transform hover:translate-x-1"
+														className="group/item flex items-center justify-between px-5 py-3 text-sm font-medium text-[#051b5a] hover:bg-gradient-to-r hover:from-blue-50 hover:to-red-100 hover:text-[#eb3527] transition-all duration-200 transform hover:translate-x-1"
 														style={{
 															transitionDelay: `${index * 30}ms`,
 														}}

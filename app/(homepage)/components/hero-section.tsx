@@ -56,7 +56,7 @@ export const HeroSection = () => {
 
 					<div className="mt-16 md:mt-24">
 						<Link
-							href="#contact"
+							href="contact"
 							className="inline-block rounded-full bg-white text-[#14264A] px-8 py-3 md:px-10 md:py-4 font-semibold shadow-lg hover:bg-slate-100 transition-all duration-200"
 						>
 							Hubungi Kami
