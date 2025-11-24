@@ -7,7 +7,6 @@
 				"useConst": "warn"
 			},
 			"correctness": {
-				"noUnusedVariables": "warn",
 				"useExhaustiveDependencies": "off"
 			},
 			"a11y": {

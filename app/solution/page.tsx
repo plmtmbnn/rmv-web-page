@@ -133,6 +133,7 @@ export default function SolutionPage() {
               </div>
               <Link 
                 href={RELIANCE_GROUP.RELIID.link}
+                target="_blank"
                 className="inline-flex items-center gap-2 text-sm font-semibold hover:gap-3 transition-all duration-300 text-[#0F3A65] mt-6 group-hover:text-blue-700"
               >
                 Selengkapnya
@@ -161,7 +162,8 @@ export default function SolutionPage() {
               </div>
               
               <Link 
-                href="#" 
+                href={RELIANCE_GROUP.REFI.link}
+                target="_blank"
                 className="relative z-10 inline-flex items-center gap-2 text-sm font-bold hover:gap-3 transition-all duration-300 mt-6 bg-white text-[#0F3A65] px-6 py-3 rounded-full w-fit shadow-lg hover:shadow-xl hover:scale-105"
               >
                 Pelajari Lebih Lanjut

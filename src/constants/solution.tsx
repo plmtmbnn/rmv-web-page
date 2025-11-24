@@ -24,6 +24,10 @@ export const RELIANCE_GROUP = {
 		link: "https://reliance-investasi.com/",
 		company_name: "PT Reliance Manajer Investasi",
 	},
+	REFI: {
+		link: "https://reliance-finance.com/",
+		company_name: "PT. Usaha Pembiayaan RelianceIndonesia",
+	},
 };
 
 export const solutions = [
