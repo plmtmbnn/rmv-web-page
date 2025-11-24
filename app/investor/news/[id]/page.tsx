@@ -2,7 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Calendar, Tag, ArrowLeft, Share2, Facebook, Twitter, Linkedin, Clock } from "lucide-react";
+import {
+	Calendar,
+	Tag,
+	ArrowLeft,
+	Share2,
+	Facebook,
+	Twitter,
+	Linkedin,
+	Clock,
+} from "lucide-react";
 import { usePathname } from "next/navigation";
 import { newsData, type NewsItemInterface } from "../news-data-list";
 import { notFound } from "next/navigation";
@@ -14,23 +23,27 @@ function getNewsBySlug(slug: string): NewsItemInterface | undefined {
 }
 
 // Helper function to get related news
-function getRelatedNews(currentSlug: string, category: string, limit: number = 3): NewsItemInterface[] {
+function getRelatedNews(
+	currentSlug: string,
+	category: string,
+	limit: number = 3,
+): NewsItemInterface[] {
 	return newsData
-		.filter(item => item.slug !== currentSlug && item.category === category)
+		.filter((item) => item.slug !== currentSlug && item.category === category)
 		.slice(0, limit);
 }
 
 // Helper function to calculate reading time
 function calculateReadingTime(content: string[]): number {
-	const totalWords = content.join(' ').split(/\s+/).length;
+	const totalWords = content.join(" ").split(/\s+/).length;
 	const wordsPerMinute = 200;
 	return Math.ceil(totalWords / wordsPerMinute);
 }
 
 export default function NewsDetailPage() {
 	const pathname = usePathname();
-	const targetSlugNews = pathname.replace('/investor/news/', '');
-	
+	const targetSlugNews = pathname.replace("/investor/news/", "");
+
 	const newsDetail = getNewsBySlug(targetSlugNews);
 
 	// Redirect to 404 if news not found
@@ -47,18 +60,27 @@ export default function NewsDetailPage() {
 		const title = newsDetail.title;
 
 		switch (platform) {
-			case 'facebook':
-				window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+			case "facebook":
+				window.open(
+					`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+					"_blank",
+				);
 				break;
-			case 'twitter':
-				window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, '_blank');
+			case "twitter":
+				window.open(
+					`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`,
+					"_blank",
+				);
 				break;
-			case 'linkedin':
-				window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
+			case "linkedin":
+				window.open(
+					`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
+					"_blank",
+				);
 				break;
-			case 'copy':
+			case "copy":
 				navigator.clipboard.writeText(url);
-				alert('Link berhasil disalin!');
+				alert("Link berhasil disalin!");
 				break;
 		}
 	};
@@ -68,8 +90,8 @@ export default function NewsDetailPage() {
 			{/* Back Button */}
 			<div className="border-b border-slate-200 bg-slate-50">
 				<div className="container mx-auto px-6 md:px-12 lg:px-20 py-6">
-					<Link 
-						href="/investor/news" 
+					<Link
+						href="/investor/news"
 						className="inline-flex items-center gap-2 text-slate-600 hover:text-[#081A4B] transition-colors font-medium"
 					>
 						<ArrowLeft className="w-4 h-4" />
@@ -81,7 +103,6 @@ export default function NewsDetailPage() {
 			{/* Article Content */}
 			<article className="container mx-auto px-6 md:px-12 lg:px-20 py-12 md:py-16">
 				<div className="max-w-4xl mx-auto">
-					
 					{/* Article Header */}
 					<header className="mb-10">
 						<div className="flex flex-wrap items-center gap-4 mb-6">
@@ -112,39 +133,44 @@ export default function NewsDetailPage() {
 
 						<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 border-b border-slate-200">
 							<p className="text-slate-600">
-								Oleh <span className="font-semibold text-slate-800">{newsDetail.author}</span>
+								Oleh{" "}
+								<span className="font-semibold text-slate-800">
+									{newsDetail.author}
+								</span>
 							</p>
 
 							{/* Share Buttons */}
 							<div className="flex items-center gap-2">
-								<span className="text-sm text-slate-500 mr-2 hidden sm:inline">Bagikan:</span>
-								<button 
-									onClick={() => handleShare('facebook')}
-									className="p-2 hover:bg-blue-50 rounded-lg transition-colors group" 
+								<span className="text-sm text-slate-500 mr-2 hidden sm:inline">
+									Bagikan:
+								</span>
+								<button
+									onClick={() => handleShare("facebook")}
+									className="p-2 hover:bg-blue-50 rounded-lg transition-colors group"
 									title="Bagikan ke Facebook"
 									aria-label="Bagikan ke Facebook"
 								>
 									<Facebook className="w-4 h-4 text-slate-600 group-hover:text-blue-600" />
 								</button>
-								<button 
-									onClick={() => handleShare('twitter')}
-									className="p-2 hover:bg-sky-50 rounded-lg transition-colors group" 
+								<button
+									onClick={() => handleShare("twitter")}
+									className="p-2 hover:bg-sky-50 rounded-lg transition-colors group"
 									title="Bagikan ke Twitter"
 									aria-label="Bagikan ke Twitter"
 								>
 									<Twitter className="w-4 h-4 text-slate-600 group-hover:text-sky-500" />
 								</button>
-								<button 
-									onClick={() => handleShare('linkedin')}
-									className="p-2 hover:bg-blue-50 rounded-lg transition-colors group" 
+								<button
+									onClick={() => handleShare("linkedin")}
+									className="p-2 hover:bg-blue-50 rounded-lg transition-colors group"
 									title="Bagikan ke LinkedIn"
 									aria-label="Bagikan ke LinkedIn"
 								>
 									<Linkedin className="w-4 h-4 text-slate-600 group-hover:text-blue-700" />
 								</button>
-								<button 
-									onClick={() => handleShare('copy')}
-									className="p-2 hover:bg-slate-100 rounded-lg transition-colors group" 
+								<button
+									onClick={() => handleShare("copy")}
+									className="p-2 hover:bg-slate-100 rounded-lg transition-colors group"
 									title="Salin link"
 									aria-label="Salin link"
 								>
@@ -169,7 +195,10 @@ export default function NewsDetailPage() {
 					{/* Article Body */}
 					<div className="prose prose-lg max-w-none">
 						{newsDetail.content.map((paragraph, index) => (
-							<p key={index} className="text-slate-700 text-base md:text-lg leading-relaxed mb-6">
+							<p
+								key={index}
+								className="text-slate-700 text-base md:text-lg leading-relaxed mb-6"
+							>
 								{paragraph}
 							</p>
 						))}
@@ -181,7 +210,7 @@ export default function NewsDetailPage() {
 							<div className="flex items-center gap-2">
 								<Tag className="w-4 h-4 text-slate-400" />
 								<span className="text-sm text-slate-600">Kategori:</span>
-								<Link 
+								<Link
 									href={`/investor/news?category=${newsDetail.category}`}
 									className="text-sm font-semibold text-[#081A4B] hover:underline"
 								>
@@ -191,23 +220,25 @@ export default function NewsDetailPage() {
 
 							{/* Share Again */}
 							<div className="flex items-center gap-2">
-								<span className="text-sm text-slate-500 hidden sm:inline">Bagikan artikel ini:</span>
-								<button 
-									onClick={() => handleShare('facebook')}
+								<span className="text-sm text-slate-500 hidden sm:inline">
+									Bagikan artikel ini:
+								</span>
+								<button
+									onClick={() => handleShare("facebook")}
 									className="p-2 hover:bg-blue-50 rounded-lg transition-colors group"
 									aria-label="Bagikan ke Facebook"
 								>
 									<Facebook className="w-4 h-4 text-slate-600 group-hover:text-blue-600" />
 								</button>
-								<button 
-									onClick={() => handleShare('twitter')}
+								<button
+									onClick={() => handleShare("twitter")}
 									className="p-2 hover:bg-sky-50 rounded-lg transition-colors group"
 									aria-label="Bagikan ke Twitter"
 								>
 									<Twitter className="w-4 h-4 text-slate-600 group-hover:text-sky-500" />
 								</button>
-								<button 
-									onClick={() => handleShare('linkedin')}
+								<button
+									onClick={() => handleShare("linkedin")}
 									className="p-2 hover:bg-blue-50 rounded-lg transition-colors group"
 									aria-label="Bagikan ke LinkedIn"
 								>

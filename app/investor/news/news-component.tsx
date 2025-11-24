@@ -7,17 +7,24 @@ import { newsData } from "./news-data-list";
 import { useState, useMemo } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
-const categories = ["Semua", "Investasi", "Keuangan", "Kemitraan", "Program", "Penghargaan"];
+const categories = [
+	"Semua",
+	"Investasi",
+	"Keuangan",
+	"Kemitraan",
+	"Program",
+	"Penghargaan",
+];
 const ITEMS_PER_PAGE = 6;
 
 export default function NewsListPage() {
 	const router = useRouter();
 	const searchParams = useSearchParams();
-	
+
 	// Get initial values from URL
-	const initialCategory = searchParams.get('category') || 'Semua';
-	const initialSearch = searchParams.get('search') || '';
-	
+	const initialCategory = searchParams.get("category") || "Semua";
+	const initialSearch = searchParams.get("search") || "";
+
 	const [selectedCategory, setSelectedCategory] = useState(initialCategory);
 	const [searchQuery, setSearchQuery] = useState(initialSearch);
 	const [visibleItems, setVisibleItems] = useState(ITEMS_PER_PAGE);
@@ -25,11 +32,13 @@ export default function NewsListPage() {
 	// Filter and search news
 	const filteredNews = useMemo(() => {
 		return newsData.filter((news) => {
-			const matchesCategory = selectedCategory === "Semua" || news.category === selectedCategory;
-			const matchesSearch = searchQuery === '' || 
+			const matchesCategory =
+				selectedCategory === "Semua" || news.category === selectedCategory;
+			const matchesSearch =
+				searchQuery === "" ||
 				news.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
 				news.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-			
+
 			return matchesCategory && matchesSearch;
 		});
 	}, [selectedCategory, searchQuery]);
@@ -41,11 +50,14 @@ export default function NewsListPage() {
 	// Update URL when filters change
 	const updateURL = (category: string, search: string) => {
 		const params = new URLSearchParams();
-		if (category !== 'Semua') params.set('category', category);
-		if (search) params.set('search', search);
-		
+		if (category !== "Semua") params.set("category", category);
+		if (search) params.set("search", search);
+
 		const queryString = params.toString();
-		router.push(queryString ? `/investor/news?${queryString}` : '/investor/news', { scroll: false });
+		router.push(
+			queryString ? `/investor/news?${queryString}` : "/investor/news",
+			{ scroll: false },
+		);
 	};
 
 	// Handle category change
@@ -64,36 +76,44 @@ export default function NewsListPage() {
 
 	// Load more
 	const handleLoadMore = () => {
-		setVisibleItems(prev => prev + ITEMS_PER_PAGE);
+		setVisibleItems((prev) => prev + ITEMS_PER_PAGE);
 	};
 
 	// Reset filters
 	const handleReset = () => {
-		setSelectedCategory('Semua');
-		setSearchQuery('');
+		setSelectedCategory("Semua");
+		setSearchQuery("");
 		setVisibleItems(ITEMS_PER_PAGE);
-		router.push('/investor/news');
+		router.push("/investor/news");
 	};
 
 	return (
 		<div className="bg-white min-h-screen">
 			<div className="container mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-20">
-				
 				{/* Header */}
 				<div className="mb-12 pb-8 border-b border-slate-200">
 					<h1 className="text-3xl md:text-4xl font-bold text-[#081A4B] mb-3">
 						Berita & Artikel
 					</h1>
 					<p className="text-slate-600 text-lg max-w-2xl">
-						Informasi terkini seputar investasi, kemitraan, dan perkembangan perusahaan.
+						Informasi terkini seputar investasi, kemitraan, dan perkembangan
+						perusahaan.
 					</p>
-					
+
 					{/* Stats */}
 					<div className="mt-6 flex items-center gap-4 text-sm">
 						<span className="text-slate-600">
-							Menampilkan <span className="font-semibold text-[#081A4B]">{displayedNews.length}</span> dari <span className="font-semibold text-[#081A4B]">{filteredNews.length}</span> berita
+							Menampilkan{" "}
+							<span className="font-semibold text-[#081A4B]">
+								{displayedNews.length}
+							</span>{" "}
+							dari{" "}
+							<span className="font-semibold text-[#081A4B]">
+								{filteredNews.length}
+							</span>{" "}
+							berita
 						</span>
-						{(selectedCategory !== 'Semua' || searchQuery) && (
+						{(selectedCategory !== "Semua" || searchQuery) && (
 							<button
 								onClick={handleReset}
 								className="text-[#081A4B] hover:underline font-medium"
@@ -137,54 +157,56 @@ export default function NewsListPage() {
 				</div>
 
 				{/* Featured News - First Item (only if showing all or matches filter) */}
-				{displayedNews.length > 0 && selectedCategory === "Semua" && !searchQuery && (
-					<div className="mb-12">
-						<Link
-							href={`/investor/news/${newsData[0].slug}`}
-							className="group block overflow-hidden rounded-2xl border border-slate-200 hover:border-[#081A4B] hover:shadow-xl transition-all duration-300"
-						>
-							<div className="grid grid-cols-1 lg:grid-cols-2">
-								{/* Image */}
-								<div className="relative h-64 lg:h-auto overflow-hidden bg-slate-100">
-									<Image
-										src={newsData[0].image}
-										alt={newsData[0].title}
-										fill
-										className="object-cover transition-transform duration-500 group-hover:scale-105"
-										sizes="(max-width: 1024px) 100vw, 50vw"
-									/>
-								</div>
-
-								{/* Content */}
-								<div className="p-8 lg:p-10 flex flex-col justify-center">
-									<div className="flex items-center gap-4 mb-4">
-										<span className="inline-flex items-center gap-1 px-3 py-1 bg-blue-50 text-[#081A4B] rounded-full text-xs font-semibold">
-											<Tag className="w-3 h-3" />
-											{newsData[0].category}
-										</span>
-										<span className="flex items-center gap-2 text-sm text-slate-500">
-											<Calendar className="w-4 h-4" />
-											{newsData[0].date}
-										</span>
+				{displayedNews.length > 0 &&
+					selectedCategory === "Semua" &&
+					!searchQuery && (
+						<div className="mb-12">
+							<Link
+								href={`/investor/news/${newsData[0].slug}`}
+								className="group block overflow-hidden rounded-2xl border border-slate-200 hover:border-[#081A4B] hover:shadow-xl transition-all duration-300"
+							>
+								<div className="grid grid-cols-1 lg:grid-cols-2">
+									{/* Image */}
+									<div className="relative h-64 lg:h-auto overflow-hidden bg-slate-100">
+										<Image
+											src={newsData[0].image}
+											alt={newsData[0].title}
+											fill
+											className="object-cover transition-transform duration-500 group-hover:scale-105"
+											sizes="(max-width: 1024px) 100vw, 50vw"
+										/>
 									</div>
 
-									<h2 className="text-2xl md:text-3xl font-bold text-[#081A4B] mb-4 group-hover:text-blue-700 transition-colors">
-										{newsData[0].title}
-									</h2>
+									{/* Content */}
+									<div className="p-8 lg:p-10 flex flex-col justify-center">
+										<div className="flex items-center gap-4 mb-4">
+											<span className="inline-flex items-center gap-1 px-3 py-1 bg-blue-50 text-[#081A4B] rounded-full text-xs font-semibold">
+												<Tag className="w-3 h-3" />
+												{newsData[0].category}
+											</span>
+											<span className="flex items-center gap-2 text-sm text-slate-500">
+												<Calendar className="w-4 h-4" />
+												{newsData[0].date}
+											</span>
+										</div>
 
-									<p className="text-slate-600 leading-relaxed mb-6">
-										{newsData[0].excerpt}
-									</p>
+										<h2 className="text-2xl md:text-3xl font-bold text-[#081A4B] mb-4 group-hover:text-blue-700 transition-colors">
+											{newsData[0].title}
+										</h2>
 
-									<div className="inline-flex items-center gap-2 text-[#081A4B] font-medium group-hover:gap-3 transition-all">
-										Baca Selengkapnya
-										<ArrowRight className="w-4 h-4" />
+										<p className="text-slate-600 leading-relaxed mb-6">
+											{newsData[0].excerpt}
+										</p>
+
+										<div className="inline-flex items-center gap-2 text-[#081A4B] font-medium group-hover:gap-3 transition-all">
+											Baca Selengkapnya
+											<ArrowRight className="w-4 h-4" />
+										</div>
 									</div>
 								</div>
-							</div>
-						</Link>
-					</div>
-				)}
+							</Link>
+						</div>
+					)}
 
 				{/* News Grid */}
 				{displayedNews.length > 0 ? (
@@ -198,7 +220,7 @@ export default function NewsListPage() {
 										href={`/investor/news/${news.slug}`}
 										className="group block overflow-hidden rounded-xl border border-slate-200 hover:border-[#081A4B] hover:shadow-lg transition-all duration-300"
 										style={{
-											animation: `fadeIn 0.5s ease-out ${index * 0.1}s both`
+											animation: `fadeIn 0.5s ease-out ${index * 0.1}s both`,
 										}}
 									>
 										{/* Image */}
@@ -247,11 +269,13 @@ export default function NewsListPage() {
 						{/* Load More Button */}
 						{hasMore && (
 							<div className="mt-12 text-center">
-								<button 
+								<button
 									onClick={handleLoadMore}
 									className="px-8 py-3 bg-[#081A4B] text-white rounded-full font-medium hover:bg-blue-900 transition-colors shadow-md hover:shadow-lg"
 								>
-									Muat {Math.min(ITEMS_PER_PAGE, filteredNews.length - visibleItems)} Berita Lagi
+									Muat{" "}
+									{Math.min(ITEMS_PER_PAGE, filteredNews.length - visibleItems)}{" "}
+									Berita Lagi
 								</button>
 							</div>
 						)}

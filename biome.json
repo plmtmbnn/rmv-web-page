@@ -4,7 +4,8 @@
 		"enabled": true,
 		"rules": {
 			"style": {
-				"useConst": "warn"
+				"useConst": "warn",
+				"noNonNullAssertion": "off"
 			},
 			"correctness": {
 				"useExhaustiveDependencies": "off"
@@ -19,7 +20,7 @@
 	},
 	"files": {
 		"ignoreUnknown": true,
-		"includes": ["src/**/*.tsx", "src/**/*.css", "src/**/*.json"]
+		"includes": ["src/**/*.tsx", "src/**/*.css", "src/**/*.json", "app"]
 	},
 	"formatter": {
 		"enabled": true,

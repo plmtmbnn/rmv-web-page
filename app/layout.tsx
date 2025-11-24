@@ -5,36 +5,38 @@ import { Navbar } from "@/src/shared-components/navbar/navbar";
 import { Footer } from "@/src/shared-components/footer";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+	variable: "--font-geist-sans",
+	subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+	variable: "--font-geist-mono",
+	subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Reliance Modal Ventura",
-  description: "PT. Reliance Modal Ventura - Solusi Keuangan Terpercaya di Indonesia",
+	title: "Reliance Modal Ventura",
+	description:
+		"PT. Reliance Modal Ventura - Solusi Keuangan Terpercaya di Indonesia",
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        
-        {/* --- Sticky navbar space to prevent layout shift --- */}
-        <div className="sticky top-0 z-50 bg-white shadow-sm">
-          <Navbar />
-        </div>
-        {children}
-        <Footer />
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<body
+				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+			>
+				{/* --- Sticky navbar space to prevent layout shift --- */}
+				<div className="sticky top-0 z-50 bg-white shadow-sm">
+					<Navbar />
+				</div>
+				{children}
+				<Footer />
+			</body>
+		</html>
+	);
 }
