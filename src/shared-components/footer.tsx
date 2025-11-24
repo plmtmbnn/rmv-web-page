@@ -17,7 +17,7 @@ export const Footer = () => {
 					{/* LEFT SECTION */}
 					<div>
 						<Image
-							src="/logo.png"
+							src="/logo-white.png"
 							width={180}
 							height={60}
 							alt="Reliance Logo"

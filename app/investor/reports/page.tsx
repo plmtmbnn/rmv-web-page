@@ -77,6 +77,7 @@ export default function InvestorPage() {
 									<a
 										key={index}
 										href={file.url}
+										target="_blank"
 										download
 										className="group flex items-center justify-between p-5 border border-slate-200 rounded-lg hover:border-[#081A4B] hover:shadow-md transition-all duration-200"
 									>

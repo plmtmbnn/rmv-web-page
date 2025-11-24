@@ -3,7 +3,7 @@ export type Member = {
   name: string;
   position: string;
   image: string;
-  detail: string;
+  detail?: string;
 };
 
 export const members: Member[] = [
@@ -44,23 +44,20 @@ Beliau meraih gelar Sarjana Hukum dari Universitas Krisnadwipayana, Jakarta.`,
     name: "Leonard Adi Putra",
     position: "Ketua Komite Audit",
     image: "/profile/dummy.png",
-    detail:
-      "Detail profil Leonard.",
+    detail: undefined
   },
   {
     id: 5,
     name: "Nike Felina",
     position: "Anggota Komite Audit",
     image: "/profile/dummy.png",
-    detail:
-      "Detail profil Nike.",
+    detail: undefined
   },
   {
     id: 6,
     name: "Naradina",
     position: "Internal Audit",
     image: "/profile/dummy.png",
-    detail:
-      "Detail profil Naradina.",
+    detail: undefined
   },
 ];

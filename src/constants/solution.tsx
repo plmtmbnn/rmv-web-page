@@ -3,6 +3,29 @@ import { Shield, TrendingUp } from "lucide-react";
 export const shot1 = "/assests/reliance-office-100px.jpg";
 export const shot2 = "/assests/reliance-office-100px.jpg";
 
+export const RELIANCE_GROUP = {
+	RELIANCE_SECURITY: {
+		link: "https://reliancesekuritas.com/",
+		company_name: "PT Reliance Sekuritas Indonesia",
+	},
+	AJRI: {
+		link: "https://reliance-life.co.id/",
+		company_name: "PT Asuransi Jiwa Reliance Indonesia",
+	},
+	ARI: {
+		link: "https://asuransireliance.com/",
+		company_name: "PT Asuransi Reliance Indonesia",
+	},
+	RELIID: {
+		link: "https://staging.reli.id/",
+		company_name: "PT Relianceintegrasi Dunia Anda",
+	},
+	RMI: {
+		link: "https://reliance-investasi.com/",
+		company_name: "PT Reliance Manajer Investasi",
+	},
+};
+
 export const solutions = [
 	{
 		title: "INVESTMENT",
@@ -11,8 +34,11 @@ export const solutions = [
 		image: shot1,
 		icon: <TrendingUp className="w-8 h-8" />,
 		links: [
-			{ label: "Website Reliance Sekuritas", href: "#" },
-			{ label: "Website RMI", href: "#" },
+			{
+				label: "Website Reliance Sekuritas",
+				href: RELIANCE_GROUP.RELIANCE_SECURITY.link,
+			},
+			{ label: "Website RMI", href: RELIANCE_GROUP.RMI.link },
 		],
 		gradient: "from-blue-900/90 via-blue-800/80 to-blue-900/90",
 	},
@@ -23,8 +49,8 @@ export const solutions = [
 		image: shot2,
 		icon: <Shield className="w-8 h-8" />,
 		links: [
-			{ label: "Website AJRI", href: "#" },
-			{ label: "Website ARI", href: "#" },
+			{ label: "Website AJRI", href: RELIANCE_GROUP.AJRI.link },
+			{ label: "Website ARI", href: RELIANCE_GROUP.ARI.link },
 		],
 		gradient: "from-indigo-900/90 via-indigo-800/80 to-indigo-900/90",
 	},
