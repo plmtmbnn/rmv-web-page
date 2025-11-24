@@ -48,19 +48,19 @@ const sustainabilityReports: YearReport[] = [
   {
     year: 2024,
     files: [
-      { name: "Lampiran 4.b. LAPORAN KEBERLANJUTAN 2024", url: "investor/sustainability_reports/2022/Lampiran 3 LAPORAN KEEBERLANJUTAN 2022.pdf", type: "pdf" }
+      { name: "Lampiran 4.b. LAPORAN KEBERLANJUTAN 2024", url: "/investor/sustainability_reports/2022/Lampiran 3 LAPORAN KEEBERLANJUTAN 2022.pdf", type: "pdf" }
     ],
   },
   {
     year: 2023,
     files: [
-      { name: "Lampiran 4 LAPORAN KEEBERLANJUTAN 2023", url: "investor/sustainability_reports/2023/Lampiran 4 LAPORAN KEBERLANJUTAN 2023.pdf", type: "pdf" },
+      { name: "Lampiran 4 LAPORAN KEEBERLANJUTAN 2023", url: "/investor/sustainability_reports/2023/Lampiran 4 LAPORAN KEBERLANJUTAN 2023.pdf", type: "pdf" },
     ],
   },
   {
     year: 2022,
     files: [
-      { name: "Lampiran 3 LAPORAN KEEBERLANJUTAN 2022", url: "investor/sustainability_reports/2022/Lampiran 3 LAPORAN KEEBERLANJUTAN 2022.pdf", type: "pdf" },
+      { name: "Lampiran 3 LAPORAN KEEBERLANJUTAN 2022", url: "/investor/sustainability_reports/2022/Lampiran 3 LAPORAN KEEBERLANJUTAN 2022.pdf", type: "pdf" },
     ],
   },
 ];
@@ -173,9 +173,6 @@ export default function InvestorPage() {
         
         {/* Header Section */}
         <div className="mb-12 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/50 text-blue-700 rounded-full text-xs font-bold uppercase tracking-wider mb-4 border border-blue-200">
-             <PieChart className="w-4 h-4" /> Investor Relations
-          </div>
           <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
             Pusat Laporan & Publikasi
           </h1>
