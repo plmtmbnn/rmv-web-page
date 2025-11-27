@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Mail, Phone } from "lucide-react";
 
 export const CTASection = () => {
-	const bg = "/assests/rupuah-idr.jpg";
+	const bg = "/assets/rupuah-idr.jpg";
 
 	return (
 		<section className="container mx-auto px-4 md:px-8 mt-16 mb-12">

@@ -1,7 +1,7 @@
 import { Shield, TrendingUp } from "lucide-react";
 
-export const shot1 = "/assests/reliance-office-100px.jpg";
-export const shot2 = "/assests/reliance-office-100px.jpg";
+export const shot1 = "/assets/reliance-office-100px.jpg";
+export const shot2 = "/assets/reliance-office-100px.jpg";
 
 export const RELIANCE_GROUP = {
 	RELIANCE_SECURITY: {

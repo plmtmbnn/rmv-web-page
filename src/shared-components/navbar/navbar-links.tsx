@@ -9,8 +9,11 @@ export const navLinks = [
 		submenu: [
 			{ href: "/profile/about", label: "Sekilas RMV" },
 			{ href: "/profile/vision", label: "Visi & Misi" },
-			{ href: "/profile/awards", label: "Struktur Organisasi" },
-			{ href: "/profile/history", label: "Struktur Kepemilikan Saham" },
+			{ href: "/profile/organization-structure", label: "Struktur Organisasi" },
+			{
+				href: "/profile/shareholding-structure",
+				label: "Struktur Kepemilikan Saham",
+			},
 		],
 	},
 	{

@@ -143,9 +143,9 @@ function ContactItem({
 
 // --- Data ---
 const officeImages = [
-	"/assests/iconic-jkt.jpg", // Fallback logic handled in component if needed, but assuming valid paths
-	"/assests/fg-jkt.jpg",
-	"/assests/reliance-office-100px.jpg",
+	"/assets/iconic-jkt.jpg", // Fallback logic handled in component if needed, but assuming valid paths
+	"/assets/fg-jkt.jpg",
+	"/assets/reliance-office-100px.jpg",
 ];
 
 export const AboutSection: React.FC = () => {
@@ -218,7 +218,7 @@ export const AboutSection: React.FC = () => {
 								className="col-span-1 row-span-2 h-full"
 							/>
 							<div className="col-span-1 row-span-1 relative rounded-2xl bg-slate-900 flex items-center justify-center overflow-hidden group">
-								<div className="absolute inset-0 bg-[url('/assests/reliance-office-100px.jpg')] opacity-40 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"></div>
+								<div className="absolute inset-0 bg-[url('/assets/reliance-office-100px.jpg')] opacity-40 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"></div>
 								<div className="relative z-10 text-center">
 									<span className="block text-3xl font-bold text-white">
 										Reliance
