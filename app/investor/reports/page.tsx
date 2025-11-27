@@ -8,8 +8,7 @@ import {
 	Download,
 	PieChart,
 	Leaf,
-	ChevronRight,
-	Search,
+	Calendar
 } from "lucide-react";
 
 // --- Types ---
@@ -84,6 +83,9 @@ const sustainabilityReports: YearReport[] = [
 		],
 	},
 ];
+
+
+const yearlyReports: YearReport[] = [];
 
 // --- Helper Functions ---
 
@@ -189,7 +191,7 @@ const ReportList = ({ data }: { data: YearReport[] }) => {
 // --- Main Page Component ---
 
 export default function InvestorPage() {
-	const [activeTab, setActiveTab] = useState<"financial" | "sustainability">(
+	const [activeTab, setActiveTab] = useState<"financial" | "sustainability" | "yearly">(
 		"financial",
 	);
 
@@ -226,6 +228,17 @@ export default function InvestorPage() {
 					</button>
 
 					<button
+						onClick={() => setActiveTab("yearly")}
+						className={`pb-4 px-2 text-sm font-bold uppercase tracking-wide transition-all duration-300 border-b-2 flex items-center gap-2 ${
+							activeTab === "yearly"
+								? "border-yellow-600 text-yellow-600"
+								: "border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300"
+						}`}
+					>
+						<Calendar className="w-4 h-4" />
+						Laporan Tahunan
+					</button>
+					<button
 						onClick={() => setActiveTab("sustainability")}
 						className={`pb-4 px-2 text-sm font-bold uppercase tracking-wide transition-all duration-300 border-b-2 flex items-center gap-2 ${
 							activeTab === "sustainability"
@@ -242,32 +255,16 @@ export default function InvestorPage() {
 				<div className="max-w-4xl min-h-[400px]">
 					{activeTab === "financial" ? (
 						<ReportList data={financialReports} />
-					) : (
+					) 
+					: 
+					activeTab === "sustainability" ?
+					(
 						<ReportList data={sustainabilityReports} />
+					)
+					:
+					(
+						<ReportList data={yearlyReports} />
 					)}
-				</div>
-
-				{/* Footer Note */}
-				<div className="mt-20 p-6 bg-white rounded-2xl border border-slate-100 shadow-sm flex flex-col md:flex-row items-start md:items-center gap-6">
-					<div className="p-3 bg-blue-50 rounded-full shrink-0">
-						<Search className="w-6 h-6 text-blue-600" />
-					</div>
-					<div className="flex-1">
-						<h4 className="text-base font-bold text-slate-900 mb-1">
-							Butuh informasi lebih detail?
-						</h4>
-						<p className="text-sm text-slate-600">
-							Jika Anda membutuhkan laporan periode sebelumnya atau dokumen
-							spesifik yang tidak tercantum, silakan hubungi tim Corporate
-							Secretary kami.
-						</p>
-					</div>
-					<a
-						href="mailto:corporate@rmv.co.id"
-						className="px-5 py-2.5 bg-slate-900 text-white text-sm font-semibold rounded-lg hover:bg-slate-800 transition-colors whitespace-nowrap"
-					>
-						Hubungi Kami
-					</a>
 				</div>
 			</div>
 		</div>
