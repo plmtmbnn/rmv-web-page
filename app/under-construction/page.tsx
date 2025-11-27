@@ -8,11 +8,6 @@ export default function UnderConstruction() {
 					We’re currently working on something awesome. Please check back again
 					soon!
 				</p>
-
-				<div className="mt-8">
-					<div className="mx-auto h-8 w-8 animate-spin rounded-full border-4 border-white border-t-transparent" />
-				</div>
-
 				<a
 					href="/"
 					className="mt-6 inline-block rounded-lg bg-white px-6 py-3 text-[#051b5a] font-semibold hover:bg-gray-200 transition"

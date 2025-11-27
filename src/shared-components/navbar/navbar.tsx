@@ -103,12 +103,6 @@ export function Navbar() {
 													}`}
 												></span>
 											</span>
-											<ChevronDown
-												size={16}
-												className={`transition-all duration-300 ${
-													openDesktopDropdown === link.label ? "rotate-180" : ""
-												}`}
-											/>
 										</button>
 									) : (
 										<Link
