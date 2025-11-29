@@ -114,10 +114,6 @@ export default function NewsDetailPage() {
 								{newsDetail.category}
 							</span>
 							<span className="flex items-center gap-2 text-sm text-slate-500">
-								<Calendar className="w-4 h-4" />
-								{newsDetail.date}
-							</span>
-							<span className="flex items-center gap-2 text-sm text-slate-500">
 								<Clock className="w-4 h-4" />
 								{readingTime} menit baca
 							</span>
@@ -292,10 +288,6 @@ export default function NewsDetailPage() {
 											</h3>
 
 											<div className="flex items-center justify-between pt-3 border-t border-slate-100">
-												<span className="flex items-center gap-2 text-xs text-slate-500">
-													<Calendar className="w-3.5 h-3.5" />
-													{news.date}
-												</span>
 												<span className="text-sm text-[#081A4B] font-medium">
 													Baca
 												</span>
