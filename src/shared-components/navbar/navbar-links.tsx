@@ -68,8 +68,17 @@ export const navLinks = [
 		href: "/investor",
 		label: "Hubungan Investor",
 		submenu: [
-			{ href: "/investor/reports", label: "Laporan Keuangan" },
+			{ href: "/investor/report/financial", label: "Laporan Keuangan Tahunan" },
+			{ href: "/investor/report/yearly", label: "Laporan Tahunan" },
+			{
+				href: "/investor/report/sustainability",
+				label: "Laporan Keberlanjutan",
+			},
 			{ href: "/investor/news", label: "Berita dan Peristiwa" },
+			{
+				href: "/investor/financial-literacy-and-inclusion",
+				label: "Literasi dan Inklusi Keuangan",
+			},
 		],
 	},
 	{

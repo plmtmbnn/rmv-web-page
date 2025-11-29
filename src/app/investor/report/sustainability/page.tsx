@@ -28,29 +28,6 @@ type YearReport = {
 
 // --- Mock Data ---
 
-const financialReports: YearReport[] = [
-	{
-		year: 2024,
-		files: [
-			{
-				name: "Lampiran 1.c. Tahun Buku 2024",
-				url: "/investor/financial_reports/2023/Lampiran 1.b. Tahun Buku 2023.pdf",
-				type: "pdf",
-			},
-		],
-	},
-	{
-		year: 2023,
-		files: [
-			{
-				name: "Lampiran 1.b. Tahun buku 2023",
-				url: "/investor/financial_reports/2023/Lampiran 1.b. Tahun Buku 2023.pdf",
-				type: "pdf",
-			},
-		],
-	},
-];
-
 const sustainabilityReports: YearReport[] = [
 	{
 		year: 2024,
@@ -83,8 +60,6 @@ const sustainabilityReports: YearReport[] = [
 		],
 	},
 ];
-
-const yearlyReports: YearReport[] = [];
 
 // --- Helper Functions ---
 
@@ -189,7 +164,7 @@ const ReportList = ({ data }: { data: YearReport[] }) => {
 
 // --- Main Page Component ---
 
-export default function InvestorPage() {
+export default function ReportSustainabilityPage() {
 	const [activeTab, setActiveTab] = useState<
 		"financial" | "sustainability" | "yearly"
 	>("financial");
@@ -215,29 +190,6 @@ export default function InvestorPage() {
 				{/* Tab Navigation */}
 				<div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10 border-b border-slate-200">
 					<button
-						onClick={() => setActiveTab("financial")}
-						className={`pb-4 px-2 text-sm font-bold uppercase tracking-wide transition-all duration-300 border-b-2 flex items-center gap-2 ${
-							activeTab === "financial"
-								? "border-blue-600 text-blue-600"
-								: "border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300"
-						}`}
-					>
-						<PieChart className="w-4 h-4" />
-						Laporan Keuangan
-					</button>
-
-					<button
-						onClick={() => setActiveTab("yearly")}
-						className={`pb-4 px-2 text-sm font-bold uppercase tracking-wide transition-all duration-300 border-b-2 flex items-center gap-2 ${
-							activeTab === "yearly"
-								? "border-yellow-600 text-yellow-600"
-								: "border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300"
-						}`}
-					>
-						<Calendar className="w-4 h-4" />
-						Laporan Tahunan
-					</button>
-					<button
 						onClick={() => setActiveTab("sustainability")}
 						className={`pb-4 px-2 text-sm font-bold uppercase tracking-wide transition-all duration-300 border-b-2 flex items-center gap-2 ${
 							activeTab === "sustainability"
@@ -252,13 +204,7 @@ export default function InvestorPage() {
 
 				{/* Dynamic Content */}
 				<div className="max-w-4xl min-h-[400px]">
-					{activeTab === "financial" ? (
-						<ReportList data={financialReports} />
-					) : activeTab === "sustainability" ? (
-						<ReportList data={sustainabilityReports} />
-					) : (
-						<ReportList data={yearlyReports} />
-					)}
+					<ReportList data={sustainabilityReports} />
 				</div>
 			</div>
 		</div>
