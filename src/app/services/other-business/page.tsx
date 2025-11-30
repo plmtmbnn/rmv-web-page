@@ -1,76 +1,14 @@
-"use client";
-
-import Link from "next/link";
-import Image from "next/image";
 import {
+	AlertCircle,
 	ArrowLeft,
-	Check,
-	Download,
+	Building2,
+	CheckCircle,
+	Clock,
 	FileText,
-	Mail,
-	Phone,
 } from "lucide-react";
+import Link from "next/link";
 
-// This would typically come from props or API
-const serviceDetail = {
-	id: 1,
-	title: "Usaha Modal Ventura",
-	subtitle: "Venture Capital Corporation",
-	description:
-		"Sesuai pasal 3 Anggaran Dasar PT Reliance Modal Ventura (Perusahaan) bahwa maksud dan tujuan Perusahaan ialah bergerak di bidang Perusahaan Modal Ventura berbentuk Venture Capital Corporation.",
-	image: "/assests/reliance-office-100px.jpg",
-
-	sections: [
-		{
-			title: "Tentang Layanan",
-			content:
-				"PT Reliance Modal Ventura adalah perusahaan yang bergerak di bidang modal ventura berbentuk Venture Capital Corporation. Kami menyediakan pembiayaan dalam bentuk penyertaan modal kepada perusahaan-perusahaan yang memiliki potensi pertumbuhan tinggi namun memerlukan dukungan modal untuk pengembangan usaha.",
-		},
-		{
-			title: "Ruang Lingkup",
-			content:
-				"Kegiatan usaha modal ventura meliputi penyertaan saham, penyertaan melalui pembelian obligasi konversi, dan/atau pembiayaan berdasarkan pembagian atas hasil usaha. Kami fokus pada perusahaan-perusahaan yang berada pada tahap pengembangan (expansion stage) dan membutuhkan pendanaan untuk pertumbuhan bisnis.",
-		},
-	],
-
-	benefits: [
-		"Akses pendanaan untuk pertumbuhan bisnis",
-		"Pendampingan dan konsultasi manajemen",
-		"Jaringan bisnis dan koneksi strategis",
-		"Dukungan operasional dan tata kelola perusahaan",
-		"Fleksibilitas struktur pembiayaan",
-		"Nilai tambah melalui expertise tim",
-	],
-
-	requirements: [
-		"Perusahaan berbadan hukum PT yang telah beroperasi minimal 2 tahun",
-		"Memiliki proyeksi pertumbuhan bisnis yang jelas",
-		"Laporan keuangan yang audited",
-		"Business plan yang komprehensif",
-		"Tim manajemen yang solid dan berpengalaman",
-		"Potensi pasar yang besar",
-	],
-
-	documents: [
-		{
-			name: "Brosur Modal Ventura",
-			type: "PDF",
-			size: "2.4 MB",
-		},
-		{
-			name: "Formulir Pengajuan",
-			type: "PDF",
-			size: "850 KB",
-		},
-		{
-			name: "Syarat dan Ketentuan",
-			type: "PDF",
-			size: "1.2 MB",
-		},
-	],
-};
-
-export default function ServiceDetailPage() {
+export default function OtherBusinessArticle() {
 	return (
 		<div className="bg-white min-h-screen">
 			{/* Back Navigation */}
@@ -86,210 +24,264 @@ export default function ServiceDetailPage() {
 				</div>
 			</div>
 
-			{/* Hero Section */}
-			<div className="relative bg-gradient-to-br from-[#081A4B] to-blue-900 text-white py-16 md:py-20 overflow-hidden">
-				{/* Decorative Elements */}
-				<div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-				<div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-3xl"></div>
-
-				<div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-					<div className="max-w-4xl">
-						<div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-sm font-semibold mb-6">
-							<FileText className="w-4 h-4" />
-							{serviceDetail.subtitle}
+			{/* Article Container */}
+			<article className="container mx-auto px-6 md:px-12 lg:px-20 py-16">
+				<div className="max-w-4xl mx-auto">
+					{/* Header */}
+					<header className="mb-12 pb-8 border-b border-slate-200">
+						<div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 border border-indigo-100 rounded-full text-sm font-semibold text-indigo-700 mb-6">
+							<Building2 className="w-4 h-4" />
+							Produk & Layanan
 						</div>
-
-						<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-							{serviceDetail.title}
+						<h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+							Kegiatan Usaha Lain
 						</h1>
+					</header>
 
-						<p className="text-lg md:text-xl text-blue-100 leading-relaxed">
-							{serviceDetail.description}
+					{/* Content */}
+					<div className="prose prose-lg max-w-none">
+						{/* Introduction */}
+						<p className="text-lg text-slate-700 leading-relaxed mb-8">
+							Sesuai dengan Peraturan Otoritas Jasa Keuangan (POJK) Nomor 25
+							Tahun 2023 Tentang Penyelenggaraan Usaha Perusahaan Modal Ventura
+							dan Perusahaan Modal Ventura Syariah, Perusahaan dapat
+							menyelenggarakan usaha lain dengan persetujuan OJK.
 						</p>
-					</div>
-				</div>
-			</div>
 
-			{/* Main Content */}
-			<div className="container mx-auto px-6 md:px-12 lg:px-20 py-16">
-				<div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-					{/* Left Content - Main Information */}
-					<div className="lg:col-span-2 space-y-12">
-						{/* Featured Image */}
-						<div className="relative h-64 md:h-96 rounded-3xl overflow-hidden shadow-xl">
-							<Image
-								src={serviceDetail.image}
-								alt={serviceDetail.title}
-								fill
-								className="object-cover"
-								sizes="(max-width: 1024px) 100vw, 66vw"
-							/>
+						{/* Types of Other Business */}
+						<div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 mb-12 border border-indigo-100">
+							<h3 className="text-xl font-bold text-slate-900 mb-4">
+								Adapun usaha lain tersebut adalah:
+							</h3>
+							<ol className="space-y-4">
+								<li className="flex items-start gap-3">
+									<span className="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold text-sm mt-0.5">
+										1
+									</span>
+									<span className="text-slate-700 leading-relaxed">
+										Kegiatan berbasis imbal jasa; dan/atau
+									</span>
+								</li>
+								<li className="flex items-start gap-3">
+									<span className="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold text-sm mt-0.5">
+										2
+									</span>
+									<span className="text-slate-700 leading-relaxed">
+										Kegiatan lain dengan persetujuan Otoritas Jasa Keuangan.
+									</span>
+								</li>
+							</ol>
 						</div>
 
-						{/* Content Sections */}
-						{serviceDetail.sections.map((section, index) => (
-							<div key={index} className="prose prose-lg max-w-none">
-								<h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-									{section.title}
+						{/* Section 1: Fee-Based Activities */}
+						<section className="mb-12">
+							<div className="flex items-center gap-3 mb-6">
+								<div className="p-3 bg-indigo-100 rounded-xl">
+									<FileText className="w-6 h-6 text-indigo-600" />
+								</div>
+								<h2 className="text-3xl font-bold text-slate-900 m-0">
+									Kegiatan Berbasis Imbal Jasa
 								</h2>
-								<p className="text-slate-600 leading-relaxed">
-									{section.content}
+							</div>
+
+							<div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm mb-6">
+								<p className="text-slate-700 leading-relaxed mb-6">
+									Perusahaan yang akan melakukan kegiatan berbasis imbal jasa
+									wajib melaporkan kepada Otoritas Jasa Keuangan dengan
+									melampirkan dokumen yang paling sedikit mencakup:
 								</p>
-							</div>
-						))}
 
-						{/* Benefits Section */}
-						<div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 md:p-10 border border-blue-100">
-							<h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-								<div className="p-2 bg-blue-100 rounded-lg">
-									<Check className="w-6 h-6 text-blue-600" />
-								</div>
-								Keuntungan
-							</h2>
-							<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-								{serviceDetail.benefits.map((benefit, index) => (
-									<div key={index} className="flex items-start gap-3">
-										<div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center mt-0.5">
-											<Check className="w-4 h-4 text-white" />
-										</div>
-										<span className="text-slate-700 leading-relaxed">
-											{benefit}
+								<div className="space-y-4">
+									<div className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
+										<span className="flex-shrink-0 w-6 h-6 rounded-full bg-slate-300 flex items-center justify-center text-slate-700 font-bold text-xs mt-0.5">
+											a
 										</span>
+										<p className="text-slate-700 leading-relaxed">
+											Uraian mengenai produk berbasis imbal jasa yang akan
+											dipasarkan;
+										</p>
 									</div>
-								))}
+
+									<div className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
+										<span className="flex-shrink-0 w-6 h-6 rounded-full bg-slate-300 flex items-center justify-center text-slate-700 font-bold text-xs mt-0.5">
+											b
+										</span>
+										<p className="text-slate-700 leading-relaxed">
+											Uraian mengenai mekanisme pemasaran;
+										</p>
+									</div>
+
+									<div className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
+										<span className="flex-shrink-0 w-6 h-6 rounded-full bg-slate-300 flex items-center justify-center text-slate-700 font-bold text-xs mt-0.5">
+											c
+										</span>
+										<p className="text-slate-700 leading-relaxed">
+											Uraian mengenai hak dan kewajiban para pihak;
+										</p>
+									</div>
+
+									<div className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
+										<span className="flex-shrink-0 w-6 h-6 rounded-full bg-slate-300 flex items-center justify-center text-slate-700 font-bold text-xs mt-0.5">
+											d
+										</span>
+										<p className="text-slate-700 leading-relaxed">
+											Rancangan perjanjian kerja sama; dan
+										</p>
+									</div>
+
+									<div className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
+										<span className="flex-shrink-0 w-6 h-6 rounded-full bg-slate-300 flex items-center justify-center text-slate-700 font-bold text-xs mt-0.5">
+											e
+										</span>
+										<p className="text-slate-700 leading-relaxed">
+											Fotokopi perizinan dari otoritas yang berwenang, jika ada.
+										</p>
+									</div>
+								</div>
 							</div>
-						</div>
+						</section>
 
-						{/* Requirements Section */}
-						<div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-3xl p-8 md:p-10 border border-slate-200">
-							<h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-								<div className="p-2 bg-slate-200 rounded-lg">
-									<FileText className="w-6 h-6 text-slate-700" />
+						{/* Section 2: Other Activities with OJK Approval */}
+						<section className="mb-12">
+							<div className="flex items-center gap-3 mb-6">
+								<div className="p-3 bg-blue-100 rounded-xl">
+									<CheckCircle className="w-6 h-6 text-blue-600" />
 								</div>
-								Persyaratan
-							</h2>
-							<ul className="space-y-4">
-								{serviceDetail.requirements.map((requirement, index) => (
-									<li key={index} className="flex items-start gap-3">
-										<span className="flex-shrink-0 w-6 h-6 rounded-full bg-slate-300 flex items-center justify-center text-slate-700 font-bold text-sm mt-0.5">
-											{index + 1}
-										</span>
-										<span className="text-slate-700 leading-relaxed">
-											{requirement}
-										</span>
-									</li>
-								))}
-							</ul>
-						</div>
-					</div>
-
-					{/* Right Sidebar */}
-					<div className="lg:col-span-1">
-						<div className="sticky top-8 space-y-6">
-							{/* Contact Card */}
-							<div className="bg-gradient-to-br from-white to-slate-50 rounded-3xl p-8 border border-slate-200 shadow-lg">
-								<h3 className="text-xl font-bold text-slate-900 mb-6">
-									Butuh Informasi Lebih?
-								</h3>
-
-								<div className="space-y-4 mb-6">
-									<a
-										href="tel:+622121192288"
-										className="flex items-center gap-3 p-4 rounded-xl hover:bg-blue-50 transition-colors group"
-									>
-										<div className="p-2 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
-											<Phone className="w-5 h-5 text-blue-600" />
-										</div>
-										<div>
-											<div className="text-xs text-slate-500 font-medium">
-												Telepon
-											</div>
-											<div className="text-sm font-semibold text-slate-900">
-												(021) 21192288
-											</div>
-										</div>
-									</a>
-
-									<a
-										href="mailto:corporate@rmv.co.id"
-										className="flex items-center gap-3 p-4 rounded-xl hover:bg-blue-50 transition-colors group"
-									>
-										<div className="p-2 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
-											<Mail className="w-5 h-5 text-blue-600" />
-										</div>
-										<div>
-											<div className="text-xs text-slate-500 font-medium">
-												Email
-											</div>
-											<div className="text-sm font-semibold text-slate-900">
-												corporate@rmv.co.id
-											</div>
-										</div>
-									</a>
-								</div>
-
-								<Link
-									href="/contact"
-									className="block w-full text-center rounded-full bg-[#081A4B] text-white px-6 py-3 font-bold hover:bg-blue-900 transition-colors shadow-md hover:shadow-lg"
-								>
-									Ajukan Sekarang
-								</Link>
+								<h2 className="text-3xl font-bold text-slate-900 m-0">
+									Kegiatan Lain dengan Persetujuan OJK
+								</h2>
 							</div>
 
-							{/* Documents Download */}
-							<div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg">
-								<h3 className="text-xl font-bold text-slate-900 mb-6">
-									Dokumen Terkait
+							{/* Requirements */}
+							<div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 border border-blue-100 mb-6">
+								<h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+									<AlertCircle className="w-5 h-5 text-blue-600" />
+									Persyaratan
 								</h3>
+								<p className="text-slate-700 leading-relaxed mb-4">
+									Perusahaan yang akan melakukan kegiatan lain dengan
+									persetujuan Otoritas Jasa Keuangan harus memenuhi persyaratan:
+								</p>
 
 								<div className="space-y-3">
-									{serviceDetail.documents.map((doc, index) => (
-										<button
-											key={index}
-											className="w-full flex items-center justify-between p-4 rounded-xl border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all group"
-										>
-											<div className="flex items-center gap-3">
-												<div className="p-2 bg-red-50 rounded-lg">
-													<FileText className="w-5 h-5 text-red-600" />
-												</div>
-												<div className="text-left">
-													<div className="text-sm font-semibold text-slate-900">
-														{doc.name}
-													</div>
-													<div className="text-xs text-slate-500">
-														{doc.type} • {doc.size}
-													</div>
-												</div>
-											</div>
-											<Download className="w-5 h-5 text-slate-400 group-hover:text-blue-600 transition-colors" />
-										</button>
-									))}
+									<div className="flex items-start gap-3 p-4 bg-white rounded-xl">
+										<span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs mt-0.5">
+											a
+										</span>
+										<p className="text-slate-700 leading-relaxed">
+											Rencana untuk melakukan kegiatan lain telah dicantumkan
+											dalam rencana bisnis;
+										</p>
+									</div>
+
+									<div className="flex items-start gap-3 p-4 bg-white rounded-xl">
+										<span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs mt-0.5">
+											b
+										</span>
+										<p className="text-slate-700 leading-relaxed">
+											Memiliki penilaian tingkat kesehatan minimum peringkat
+											komposit 2 (dua) untuk Perusahaan atau profil risiko
+											peringkat 2 (dua) untuk UUS; dan
+										</p>
+									</div>
+
+									<div className="flex items-start gap-3 p-4 bg-white rounded-xl">
+										<span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs mt-0.5">
+											c
+										</span>
+										<p className="text-slate-700 leading-relaxed">
+											Tidak sedang dikenakan sanksi administratif oleh Otoritas
+											Jasa Keuangan.
+										</p>
+									</div>
 								</div>
 							</div>
+
+							{/* Application Documents */}
+							<div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm mb-6">
+								<h3 className="text-xl font-bold text-slate-900 mb-4">
+									Dokumen Permohonan
+								</h3>
+								<p className="text-slate-700 leading-relaxed mb-4">
+									Permohonan persetujuan kegiatan usaha lain diajukan kepada OJK
+									dengan melampirkan:
+								</p>
+
+								<div className="space-y-4">
+									<div className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
+										<span className="flex-shrink-0 w-6 h-6 rounded-full bg-slate-300 flex items-center justify-center text-slate-700 font-bold text-xs mt-0.5">
+											a
+										</span>
+										<p className="text-slate-700 leading-relaxed">
+											Skema atau mekanisme kegiatan lain yang akan dilakukan,
+											disertai dengan uraian akad yang digunakan bagi PMVS;
+										</p>
+									</div>
+
+									<div className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
+										<span className="flex-shrink-0 w-6 h-6 rounded-full bg-slate-300 flex items-center justify-center text-slate-700 font-bold text-xs mt-0.5">
+											b
+										</span>
+										<p className="text-slate-700 leading-relaxed">
+											Analisis prospek usaha; dan
+										</p>
+									</div>
+
+									<div className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
+										<span className="flex-shrink-0 w-6 h-6 rounded-full bg-slate-300 flex items-center justify-center text-slate-700 font-bold text-xs mt-0.5">
+											c
+										</span>
+										<p className="text-slate-700 leading-relaxed">
+											Contoh perjanjian kegiatan yang akan digunakan yang paling
+											sedikit memuat hak dan kewajiban para pihak.
+										</p>
+									</div>
+								</div>
+							</div>
+
+							{/* Processing Time */}
+							<div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-200">
+								<div className="flex items-start gap-4">
+									<div className="p-3 bg-green-100 rounded-xl">
+										<Clock className="w-6 h-6 text-green-600" />
+									</div>
+									<div>
+										<h4 className="text-lg font-bold text-slate-900 mb-2">
+											Waktu Pemrosesan
+										</h4>
+										<p className="text-slate-700 leading-relaxed">
+											Otoritas Jasa Keuangan memberikan persetujuan atau
+											penolakan atas permohonan dalam jangka waktu paling lama{" "}
+											<strong>20 (dua puluh) hari kerja</strong> sejak
+											permohonan diterima secara lengkap.
+										</p>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+
+					{/* Bottom CTA */}
+					<div className="mt-16 pt-8 border-t border-slate-200">
+						<div className="bg-gradient-to-r from-[#081A4B] to-blue-900 rounded-3xl p-8 md:p-10 text-white text-center">
+							<h3 className="text-2xl md:text-3xl font-bold mb-4">
+								Butuh Informasi Lebih Lanjut?
+							</h3>
+							<p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+								Hubungi tim kami untuk konsultasi mengenai kegiatan usaha lain
+								dan prosedur pengajuannya.
+							</p>
+							<Link
+								href="/contact"
+								className="inline-flex items-center gap-2 bg-white text-[#081A4B] px-8 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+							>
+								Hubungi Kami
+								<ArrowLeft className="w-5 h-5 rotate-180" />
+							</Link>
 						</div>
 					</div>
 				</div>
-			</div>
-
-			{/* Bottom CTA */}
-			<div className="bg-slate-50 border-t border-slate-200 py-12">
-				<div className="container mx-auto px-6 md:px-12 lg:px-20 text-center">
-					<h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-						Siap Untuk Memulai?
-					</h2>
-					<p className="text-slate-600 mb-8 max-w-2xl mx-auto">
-						Tim kami siap membantu Anda menemukan solusi pembiayaan yang tepat
-						untuk bisnis Anda.
-					</p>
-					<Link
-						href="/contact"
-						className="inline-flex items-center gap-2 bg-[#081A4B] text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-blue-900 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-					>
-						Hubungi Kami Sekarang
-						<ArrowLeft className="w-5 h-5 rotate-180" />
-					</Link>
-				</div>
-			</div>
+			</article>
 		</div>
 	);
 }

@@ -24,23 +24,23 @@ export const navLinks = [
 				href: "/corporate-governance/articles-of-association",
 				label: "Anggaran Dasar",
 			},
-			{ href: "/corporate-governance/code-of-conduct", label: "Kode Etik" },
-			{
-				href: "/corporate-governance/bod-charter",
-				label: "Piagam Pengurus (BOD Charter)",
-			},
-			{
-				href: "/corporate-governance/whistleblowing-policy",
-				label: "Kebijakan Whistleblowing",
-			},
-			{
-				href: "/corporate-governance/training-and-development-policy",
-				label: "Kebijakan Pelatihan dan Pengembangan Karyawan",
-			},
-			{
-				href: "/corporate-governance/anti-fraud-policy",
-				label: "Kebijakan Anti Fraud",
-			},
+			// { href: "/corporate-governance/code-of-conduct", label: "Kode Etik" },
+			// {
+			// 	href: "/corporate-governance/bod-charter",
+			// 	label: "Piagam Pengurus (BOD Charter)",
+			// },
+			// {
+			// 	href: "/corporate-governance/whistleblowing-policy",
+			// 	label: "Kebijakan Whistleblowing",
+			// },
+			// {
+			// 	href: "/corporate-governance/training-and-development-policy",
+			// 	label: "Kebijakan Pelatihan dan Pengembangan Karyawan",
+			// },
+			// {
+			// 	href: "/corporate-governance/anti-fraud-policy",
+			// 	label: "Kebijakan Anti Fraud",
+			// },
 			{
 				href: "/corporate-governance/aml-cft-ppspf-policy",
 				label: "Kebijakan APU/PPT/PPSPM",

@@ -1,15 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
 import {
-	FileText,
-	FileSpreadsheet,
-	File,
-	Download,
-	PieChart,
-	Leaf,
 	Calendar,
+	Download,
+	File,
+	FileSpreadsheet,
+	FileText,
+	Leaf,
+	PieChart,
 } from "lucide-react";
+import React, { useState } from "react";
 
 // --- Types ---
 type FileType = "pdf" | "excel" | "doc";
@@ -111,7 +111,7 @@ const ReportList = ({ data }: { data: YearReport[] }) => {
 					<div className="grid gap-4">
 						{yearGroup.files.map((file, index) => (
 							<a
-								key={index}
+								key={String(index)}
 								href={file.url}
 								target="_blank"
 								download

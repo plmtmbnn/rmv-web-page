@@ -1,76 +1,66 @@
 "use client";
 
+import { ArrowLeft, Building2, Globe, TrendingUp, Users } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
-import {
-	ArrowLeft,
-	Check,
-	Download,
-	FileText,
-	Mail,
-	Phone,
-} from "lucide-react";
 
-// This would typically come from props or API
-const serviceDetail = {
-	id: 1,
-	title: "Usaha Modal Ventura",
-	subtitle: "Venture Capital Corporation",
-	description:
-		"Sesuai pasal 3 Anggaran Dasar PT Reliance Modal Ventura (Perusahaan) bahwa maksud dan tujuan Perusahaan ialah bergerak di bidang Perusahaan Modal Ventura berbentuk Venture Capital Corporation.",
-	image: "/assests/reliance-office-100px.jpg",
-
-	sections: [
-		{
-			title: "Tentang Layanan",
-			content:
-				"PT Reliance Modal Ventura adalah perusahaan yang bergerak di bidang modal ventura berbentuk Venture Capital Corporation. Kami menyediakan pembiayaan dalam bentuk penyertaan modal kepada perusahaan-perusahaan yang memiliki potensi pertumbuhan tinggi namun memerlukan dukungan modal untuk pengembangan usaha.",
+const investments = [
+	{
+		id: 1,
+		name: "PT Reliance Integrasi Dunia Anda",
+		shortName: "RIDA",
+		amount: "Rp 9.600.000.000",
+		icon: <Building2 className="w-8 h-8" />,
+		color: "from-blue-600 to-blue-700",
+		bgColor: "bg-blue-50",
+		details: {
+			date: "21 September 2021",
+			shares: "240 saham",
+			nominal: "Rp 240.000.000",
+			ownership: "48%",
+			description:
+				"Berdasarkan Perjanjian Jual Beli Saham tanggal 21 September 2021, Perusahaan membeli dan menerima 240 saham RIDA dari PT Reliance Capital Management, pemegang saham, dengan nilai nominal seluruhnya Rp240.000.000 yang mewakili 48% kepemilikan saham dengan nilai transaksi Rp9.600.000.000.",
 		},
-		{
-			title: "Ruang Lingkup",
-			content:
-				"Kegiatan usaha modal ventura meliputi penyertaan saham, penyertaan melalui pembelian obligasi konversi, dan/atau pembiayaan berdasarkan pembagian atas hasil usaha. Kami fokus pada perusahaan-perusahaan yang berada pada tahap pengembangan (expansion stage) dan membutuhkan pendanaan untuk pertumbuhan bisnis.",
+	},
+	{
+		id: 2,
+		name: "PT Klik Beres Semua",
+		shortName: "KBS",
+		amount: "Rp 1.665.000.000",
+		icon: <TrendingUp className="w-8 h-8" />,
+		color: "from-indigo-600 to-indigo-700",
+		bgColor: "bg-indigo-50",
+		details: {
+			location: "Jakarta Barat",
+			year: "2016",
+			shares: "1.665 saham",
+			nominal: "Rp 1.000.000 per saham",
+			ownership: "45%",
+			description:
+				"Berkedudukan di Jakarta Barat. KBS melakukan kegiatan jasa sarana teknologi. Pada tahun 2016, Perusahaan melakukan investasi sebanyak 1.665 saham dengan nilai nominal Rp1.000.000 per saham atau 45% kepemilikan.",
 		},
-	],
-
-	benefits: [
-		"Akses pendanaan untuk pertumbuhan bisnis",
-		"Pendampingan dan konsultasi manajemen",
-		"Jaringan bisnis dan koneksi strategis",
-		"Dukungan operasional dan tata kelola perusahaan",
-		"Fleksibilitas struktur pembiayaan",
-		"Nilai tambah melalui expertise tim",
-	],
-
-	requirements: [
-		"Perusahaan berbadan hukum PT yang telah beroperasi minimal 2 tahun",
-		"Memiliki proyeksi pertumbuhan bisnis yang jelas",
-		"Laporan keuangan yang audited",
-		"Business plan yang komprehensif",
-		"Tim manajemen yang solid dan berpengalaman",
-		"Potensi pasar yang besar",
-	],
-
-	documents: [
-		{
-			name: "Brosur Modal Ventura",
-			type: "PDF",
-			size: "2.4 MB",
+	},
+	{
+		id: 3,
+		name: "CredoLab Pte Ltd",
+		shortName: "CL",
+		amount: "Rp 1.336.000.000",
+		icon: <Globe className="w-8 h-8" />,
+		color: "from-purple-600 to-purple-700",
+		bgColor: "bg-purple-50",
+		details: {
+			location: "Singapura",
+			year: "2017",
+			shares: "8.811 saham",
+			initialOwnership: "2,33%",
+			currentOwnership: "1,76%",
+			amount: "USD 100.000",
+			description:
+				"Berdomisili di Singapura, merupakan penyedia solusi fintech berbasis smartphone berbayar. Pada tahun 2017, Perusahaan melakukan penyertaan sebanyak 8.811 saham (2,33% kepemilikan) dengan jumlah sebesar USD100.000. Berdasarkan Subscription Agreement Schedule No.3 tahun 2020, investasi di Credo Lab mengalami Kapitalisasi Indikatif Terdilusi Sepenuhnya segera setelah Penyelesaian Kedua. Kepemilikan Perusahaan berubah menjadi 1,76%.",
 		},
-		{
-			name: "Formulir Pengajuan",
-			type: "PDF",
-			size: "850 KB",
-		},
-		{
-			name: "Syarat dan Ketentuan",
-			type: "PDF",
-			size: "1.2 MB",
-		},
-	],
-};
+	},
+];
 
-export default function ServiceDetailPage() {
+export default function EquityParticipationArticle() {
 	return (
 		<div className="bg-white min-h-screen">
 			{/* Back Navigation */}
@@ -86,210 +76,241 @@ export default function ServiceDetailPage() {
 				</div>
 			</div>
 
-			{/* Hero Section */}
-			<div className="relative bg-gradient-to-br from-[#081A4B] to-blue-900 text-white py-16 md:py-20 overflow-hidden">
-				{/* Decorative Elements */}
-				<div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-				<div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-3xl"></div>
-
-				<div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-					<div className="max-w-4xl">
-						<div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-sm font-semibold mb-6">
-							<FileText className="w-4 h-4" />
-							{serviceDetail.subtitle}
+			{/* Article Container */}
+			<article className="container mx-auto px-6 md:px-12 lg:px-20 py-16">
+				<div className="max-w-6xl mx-auto">
+					{/* Header */}
+					<header className="mb-12 pb-8 border-b border-slate-200">
+						<div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-100 rounded-full text-sm font-semibold text-purple-700 mb-6">
+							<Users className="w-4 h-4" />
+							Portofolio Investasi
 						</div>
-
-						<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-							{serviceDetail.title}
+						<h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+							Penyertaan Saham
 						</h1>
-
-						<p className="text-lg md:text-xl text-blue-100 leading-relaxed">
-							{serviceDetail.description}
+						<p className="text-lg text-slate-600">
+							PT Reliance Modal Ventura - Investasi Penyertaan Saham
 						</p>
-					</div>
-				</div>
-			</div>
+					</header>
 
-			{/* Main Content */}
-			<div className="container mx-auto px-6 md:px-12 lg:px-20 py-16">
-				<div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-					{/* Left Content - Main Information */}
-					<div className="lg:col-span-2 space-y-12">
-						{/* Featured Image */}
-						<div className="relative h-64 md:h-96 rounded-3xl overflow-hidden shadow-xl">
-							<Image
-								src={serviceDetail.image}
-								alt={serviceDetail.title}
-								fill
-								className="object-cover"
-								sizes="(max-width: 1024px) 100vw, 66vw"
-							/>
-						</div>
+					{/* Investment Summary Cards */}
+					<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+						{investments.map((investment, index) => (
+							<div
+								key={investment.id}
+								className="group relative bg-white rounded-2xl border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
+								style={{
+									animation: `fadeInUp 0.5s ease-out ${index * 0.15}s both`,
+								}}
+							>
+								{/* Decorative gradient */}
+								<div
+									className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${investment.color}`}
+								></div>
 
-						{/* Content Sections */}
-						{serviceDetail.sections.map((section, index) => (
-							<div key={index} className="prose prose-lg max-w-none">
-								<h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-									{section.title}
-								</h2>
-								<p className="text-slate-600 leading-relaxed">
-									{section.content}
-								</p>
+								<div className="p-6">
+									{/* Icon */}
+									<div
+										className={`inline-flex p-3 ${investment.bgColor} rounded-xl mb-4`}
+									>
+										<span className="text-slate-700">{investment.icon}</span>
+									</div>
+
+									{/* Number */}
+									<div className="text-sm text-slate-500 font-medium mb-2">
+										Investasi #{investment.id}
+									</div>
+
+									{/* Company Name */}
+									<h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors">
+										{investment.name}
+									</h3>
+
+									{/* Amount */}
+									<div
+										className={`text-2xl font-bold bg-gradient-to-r ${investment.color} bg-clip-text text-transparent`}
+									>
+										{investment.amount}
+									</div>
+								</div>
 							</div>
 						))}
+					</div>
 
-						{/* Benefits Section */}
-						<div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 md:p-10 border border-blue-100">
-							<h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-								<div className="p-2 bg-blue-100 rounded-lg">
-									<Check className="w-6 h-6 text-blue-600" />
-								</div>
-								Keuntungan
-							</h2>
-							<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-								{serviceDetail.benefits.map((benefit, index) => (
-									<div key={index} className="flex items-start gap-3">
-										<div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center mt-0.5">
-											<Check className="w-4 h-4 text-white" />
+					{/* Detailed Information */}
+					<div className="space-y-12">
+						{investments.map((investment, index) => (
+							<section
+								key={investment.id}
+								className="scroll-mt-8"
+								id={`investment-${investment.id}`}
+							>
+								<div className="bg-gradient-to-br from-slate-50 to-white rounded-3xl border border-slate-200 shadow-lg overflow-hidden">
+									{/* Section Header */}
+									<div
+										className={`bg-gradient-to-r ${investment.color} p-6 md:p-8`}
+									>
+										<div className="flex items-center gap-4 text-white">
+											<div className="p-3 bg-white/20 rounded-xl">
+												{investment.icon}
+											</div>
+											<div>
+												<div className="text-sm font-semibold opacity-90 mb-1">
+													{investment.shortName}
+												</div>
+												<h2 className="text-2xl md:text-3xl font-bold">
+													{investment.name}
+												</h2>
+											</div>
 										</div>
-										<span className="text-slate-700 leading-relaxed">
-											{benefit}
-										</span>
 									</div>
-								))}
-							</div>
-						</div>
 
-						{/* Requirements Section */}
-						<div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-3xl p-8 md:p-10 border border-slate-200">
-							<h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-								<div className="p-2 bg-slate-200 rounded-lg">
-									<FileText className="w-6 h-6 text-slate-700" />
+									{/* Content */}
+									<div className="p-6 md:p-8">
+										{/* Description */}
+										<p className="text-slate-700 leading-relaxed mb-8">
+											{investment.details.description}
+										</p>
+
+										{/* Key Information Grid */}
+										<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+											{investment.details.date && (
+												<div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+													<div className="text-xs text-slate-500 font-semibold uppercase tracking-wide mb-1">
+														Tanggal
+													</div>
+													<div className="text-sm font-bold text-slate-900">
+														{investment.details.date}
+													</div>
+												</div>
+											)}
+
+											{investment.details.year && (
+												<div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+													<div className="text-xs text-slate-500 font-semibold uppercase tracking-wide mb-1">
+														Tahun
+													</div>
+													<div className="text-sm font-bold text-slate-900">
+														{investment.details.year}
+													</div>
+												</div>
+											)}
+
+											{investment.details.location && (
+												<div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+													<div className="text-xs text-slate-500 font-semibold uppercase tracking-wide mb-1">
+														Lokasi
+													</div>
+													<div className="text-sm font-bold text-slate-900">
+														{investment.details.location}
+													</div>
+												</div>
+											)}
+
+											<div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+												<div className="text-xs text-slate-500 font-semibold uppercase tracking-wide mb-1">
+													Jumlah Saham
+												</div>
+												<div className="text-sm font-bold text-slate-900">
+													{investment.details.shares}
+												</div>
+											</div>
+
+											{investment.details.nominal && (
+												<div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+													<div className="text-xs text-slate-500 font-semibold uppercase tracking-wide mb-1">
+														Nilai Nominal
+													</div>
+													<div className="text-sm font-bold text-slate-900">
+														{investment.details.nominal}
+													</div>
+												</div>
+											)}
+
+											{investment.details.ownership && (
+												<div className="p-4 bg-blue-50 rounded-xl border border-blue-200">
+													<div className="text-xs text-blue-600 font-semibold uppercase tracking-wide mb-1">
+														Kepemilikan
+													</div>
+													<div className="text-sm font-bold text-blue-700">
+														{investment.details.ownership}
+													</div>
+												</div>
+											)}
+
+											{investment.details.amount && (
+												<div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+													<div className="text-xs text-slate-500 font-semibold uppercase tracking-wide mb-1">
+														Nilai Investasi
+													</div>
+													<div className="text-sm font-bold text-slate-900">
+														{investment.details.amount}
+													</div>
+												</div>
+											)}
+
+											{investment.details.initialOwnership && (
+												<div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+													<div className="text-xs text-slate-500 font-semibold uppercase tracking-wide mb-1">
+														Kepemilikan Awal
+													</div>
+													<div className="text-sm font-bold text-slate-900">
+														{investment.details.initialOwnership}
+													</div>
+												</div>
+											)}
+
+											{investment.details.currentOwnership && (
+												<div className="p-4 bg-blue-50 rounded-xl border border-blue-200">
+													<div className="text-xs text-blue-600 font-semibold uppercase tracking-wide mb-1">
+														Kepemilikan Saat Ini
+													</div>
+													<div className="text-sm font-bold text-blue-700">
+														{investment.details.currentOwnership}
+													</div>
+												</div>
+											)}
+										</div>
+									</div>
 								</div>
-								Persyaratan
-							</h2>
-							<ul className="space-y-4">
-								{serviceDetail.requirements.map((requirement, index) => (
-									<li key={index} className="flex items-start gap-3">
-										<span className="flex-shrink-0 w-6 h-6 rounded-full bg-slate-300 flex items-center justify-center text-slate-700 font-bold text-sm mt-0.5">
-											{index + 1}
-										</span>
-										<span className="text-slate-700 leading-relaxed">
-											{requirement}
-										</span>
-									</li>
-								))}
-							</ul>
-						</div>
+							</section>
+						))}
 					</div>
 
-					{/* Right Sidebar */}
-					<div className="lg:col-span-1">
-						<div className="sticky top-8 space-y-6">
-							{/* Contact Card */}
-							<div className="bg-gradient-to-br from-white to-slate-50 rounded-3xl p-8 border border-slate-200 shadow-lg">
-								<h3 className="text-xl font-bold text-slate-900 mb-6">
-									Butuh Informasi Lebih?
-								</h3>
-
-								<div className="space-y-4 mb-6">
-									<a
-										href="tel:+622121192288"
-										className="flex items-center gap-3 p-4 rounded-xl hover:bg-blue-50 transition-colors group"
-									>
-										<div className="p-2 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
-											<Phone className="w-5 h-5 text-blue-600" />
-										</div>
-										<div>
-											<div className="text-xs text-slate-500 font-medium">
-												Telepon
-											</div>
-											<div className="text-sm font-semibold text-slate-900">
-												(021) 21192288
-											</div>
-										</div>
-									</a>
-
-									<a
-										href="mailto:corporate@rmv.co.id"
-										className="flex items-center gap-3 p-4 rounded-xl hover:bg-blue-50 transition-colors group"
-									>
-										<div className="p-2 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
-											<Mail className="w-5 h-5 text-blue-600" />
-										</div>
-										<div>
-											<div className="text-xs text-slate-500 font-medium">
-												Email
-											</div>
-											<div className="text-sm font-semibold text-slate-900">
-												corporate@rmv.co.id
-											</div>
-										</div>
-									</a>
-								</div>
-
-								<Link
-									href="/contact"
-									className="block w-full text-center rounded-full bg-[#081A4B] text-white px-6 py-3 font-bold hover:bg-blue-900 transition-colors shadow-md hover:shadow-lg"
-								>
-									Ajukan Sekarang
-								</Link>
-							</div>
-
-							{/* Documents Download */}
-							<div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg">
-								<h3 className="text-xl font-bold text-slate-900 mb-6">
-									Dokumen Terkait
-								</h3>
-
-								<div className="space-y-3">
-									{serviceDetail.documents.map((doc, index) => (
-										<button
-											key={index}
-											className="w-full flex items-center justify-between p-4 rounded-xl border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all group"
-										>
-											<div className="flex items-center gap-3">
-												<div className="p-2 bg-red-50 rounded-lg">
-													<FileText className="w-5 h-5 text-red-600" />
-												</div>
-												<div className="text-left">
-													<div className="text-sm font-semibold text-slate-900">
-														{doc.name}
-													</div>
-													<div className="text-xs text-slate-500">
-														{doc.type} • {doc.size}
-													</div>
-												</div>
-											</div>
-											<Download className="w-5 h-5 text-slate-400 group-hover:text-blue-600 transition-colors" />
-										</button>
-									))}
-								</div>
-							</div>
+					{/* Bottom CTA */}
+					<div className="mt-16 pt-8 border-t border-slate-200">
+						<div className="bg-gradient-to-r from-[#081A4B] to-blue-900 rounded-3xl p-8 md:p-10 text-white text-center">
+							<h3 className="text-2xl md:text-3xl font-bold mb-4">
+								Tertarik dengan Portofolio Investasi Kami?
+							</h3>
+							<p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+								Hubungi tim kami untuk informasi lebih lanjut mengenai peluang
+								investasi dan kemitraan.
+							</p>
+							<Link
+								href="/contact"
+								className="inline-flex items-center gap-2 bg-white text-[#081A4B] px-8 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+							>
+								Hubungi Kami
+								<ArrowLeft className="w-5 h-5 rotate-180" />
+							</Link>
 						</div>
 					</div>
 				</div>
-			</div>
+			</article>
 
-			{/* Bottom CTA */}
-			<div className="bg-slate-50 border-t border-slate-200 py-12">
-				<div className="container mx-auto px-6 md:px-12 lg:px-20 text-center">
-					<h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-						Siap Untuk Memulai?
-					</h2>
-					<p className="text-slate-600 mb-8 max-w-2xl mx-auto">
-						Tim kami siap membantu Anda menemukan solusi pembiayaan yang tepat
-						untuk bisnis Anda.
-					</p>
-					<Link
-						href="/contact"
-						className="inline-flex items-center gap-2 bg-[#081A4B] text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-blue-900 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-					>
-						Hubungi Kami Sekarang
-						<ArrowLeft className="w-5 h-5 rotate-180" />
-					</Link>
-				</div>
-			</div>
+			<style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
 		</div>
 	);
 }

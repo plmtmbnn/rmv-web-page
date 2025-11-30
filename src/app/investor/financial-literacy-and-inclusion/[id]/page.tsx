@@ -1,20 +1,19 @@
 "use client";
 
+import {
+	ArrowLeft,
+	Calendar,
+	Clock,
+	Facebook,
+	Linkedin,
+	Share2,
+	Tag,
+	Twitter,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-	Calendar,
-	Tag,
-	ArrowLeft,
-	Share2,
-	Facebook,
-	Twitter,
-	Linkedin,
-	Clock,
-} from "lucide-react";
-import { usePathname } from "next/navigation";
-import { newsData, type NewsItemInterface } from "../news-data-list";
-import { notFound } from "next/navigation";
+import { notFound, usePathname } from "next/navigation";
+import { type NewsItemInterface, newsData } from "../news-data-list";
 
 // Helper function to get news by slug
 function getNewsBySlug(slug: string): NewsItemInterface | undefined {
@@ -195,7 +194,7 @@ export default function NewsDetailPage() {
 					<div className="prose prose-lg max-w-none">
 						{newsDetail.content.map((paragraph, index) => (
 							<p
-								key={index}
+								key={String(index)}
 								className="text-slate-700 text-base md:text-lg leading-relaxed mb-6"
 							>
 								{paragraph}

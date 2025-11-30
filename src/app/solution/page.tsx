@@ -1,9 +1,9 @@
 "use client";
 
-import { RELIANCE_GROUP, solutions } from "../../constants/solution";
 import { ArrowRight, Banknote, Sparkles, TrendingUp } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { RELIANCE_GROUP, solutions } from "@/src/constants/solution";
 
 const reliid_logo = "/logo-reliid.png";
 
