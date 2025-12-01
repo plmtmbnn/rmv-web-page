@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import {
 	MapPin,
 	Phone,
@@ -94,7 +95,7 @@ function ContactItem({
 			: { onClick: handleCopy };
 
 	return (
-		// @ts-ignore - dynamic element type
+		// @ts-expect-error - dynamic element type
 		<Wrapper
 			{...wrapperProps}
 			className={`group relative flex flex-col gap-4 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer`}

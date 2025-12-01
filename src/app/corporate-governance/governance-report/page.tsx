@@ -166,28 +166,13 @@ export default function Page() {
 				{/* Header Section */}
 				<div className="mb-12 max-w-3xl">
 					<h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
-						Pusat Laporan & Publikasi
+						Laporan Tata Kelola
 					</h1>
 					<p className="text-slate-600 text-lg leading-relaxed">
 						Akses dokumen keuangan dan laporan keberlanjutan kami sebagai wujud
 						transparansi dan akuntabilitas perusahaan kepada para pemangku
 						kepentingan.
 					</p>
-				</div>
-
-				{/* Tab Navigation */}
-				<div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10 border-b border-slate-200">
-					<button
-						onClick={() => setActiveTab("financial")}
-						className={`pb-4 px-2 text-sm font-bold uppercase tracking-wide transition-all duration-300 border-b-2 flex items-center gap-2 ${
-							activeTab === "financial"
-								? "border-blue-600 text-blue-600"
-								: "border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300"
-						}`}
-					>
-						<PieChart className="w-4 h-4" />
-						Laporan Keuangan
-					</button>
 				</div>
 
 				{/* Dynamic Content */}

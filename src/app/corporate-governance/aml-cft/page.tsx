@@ -12,8 +12,6 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 
-// PDF file from public folder - path should start from public/
-// Make sure the file exists in: public/corporate-governance/filename.pdf
 const PDF_FILE =
 	"/corporate-governance/Lampiran 12 Pernyataan APU PPT PPSPM 2025.pdf";
 const PDF_TITLE = "Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme";
@@ -24,7 +22,7 @@ export default function PDFPreviewPage() {
 	const handleDownload = () => {
 		const link = document.createElement("a");
 		link.href = PDF_FILE;
-		link.download = PDF_TITLE + ".pdf";
+		link.download = `${PDF_TITLE}.pdf`;
 		link.click();
 	};
 

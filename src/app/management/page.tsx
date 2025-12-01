@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Member, members } from "../management/constant";
+import { type Member, members } from "../management/constant";
 import { X, Award, Briefcase, Mail, Linkedin } from "lucide-react";
 
 export default function ManagementPage() {
