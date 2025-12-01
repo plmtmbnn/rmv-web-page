@@ -12,18 +12,19 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 
-// Example PDF file - replace with your actual PDF path
+// PDF file from public folder - path should start from public/
+// Make sure the file exists in: public/corporate-governance/filename.pdf
 const PDF_FILE =
 	"/corporate-governance/Lampiran 12 Pernyataan APU PPT PPSPM 2025.pdf";
-const PDF_TITLE = "Laporan Keuangan 2024";
+const PDF_TITLE = "Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme";
 
-export default function Page() {
+export default function PDFPreviewPage() {
 	const [zoom, setZoom] = useState(100);
 
 	const handleDownload = () => {
 		const link = document.createElement("a");
 		link.href = PDF_FILE;
-		link.download = `${PDF_TITLE}.pdf`;
+		link.download = PDF_TITLE + ".pdf";
 		link.click();
 	};
 
@@ -48,6 +49,21 @@ export default function Page() {
 			<header className="bg-white border-b border-slate-200 sticky top-0 z-10 shadow-sm">
 				<div className="container mx-auto px-6 md:px-12 lg:px-20 py-4">
 					<div className="flex items-center justify-between">
+						{/* Left - Back button and title */}
+						<div className="flex items-center gap-4">
+							<div className="flex items-center gap-3">
+								<div className="p-2 bg-red-50 rounded-lg">
+									<FileText className="w-5 h-5 text-red-600" />
+								</div>
+								<div>
+									<h1 className="text-lg font-bold text-slate-900">
+										{PDF_TITLE}
+									</h1>
+									<p className="text-xs text-slate-500">Dokumen PDF</p>
+								</div>
+							</div>
+						</div>
+
 						{/* Right - Actions */}
 						<div className="flex items-center gap-2">
 							{/* Fullscreen - Hidden on mobile */}
