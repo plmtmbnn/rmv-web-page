@@ -34,7 +34,7 @@ const sustainabilityReports: YearReport[] = [
 		files: [
 			{
 				name: "Lampiran 4.b. LAPORAN KEBERLANJUTAN 2024",
-				url: "/investor/sustainability_reports/2022/Lampiran 3 LAPORAN KEEBERLANJUTAN 2022.pdf",
+				url: "/investor/sustainability_reports/2024/Lampiran 4.b. LAPORAN KEBERLANJUTAN 2024.pdf",
 				type: "pdf",
 			},
 		],
@@ -43,7 +43,7 @@ const sustainabilityReports: YearReport[] = [
 		year: 2023,
 		files: [
 			{
-				name: "Lampiran 4 LAPORAN KEEBERLANJUTAN 2023",
+				name: "Lampiran 4 LAPORAN KEBERLANJUTAN 2023",
 				url: "/investor/sustainability_reports/2023/Lampiran 4 LAPORAN KEBERLANJUTAN 2023.pdf",
 				type: "pdf",
 			},
@@ -53,7 +53,7 @@ const sustainabilityReports: YearReport[] = [
 		year: 2022,
 		files: [
 			{
-				name: "Lampiran 3 LAPORAN KEEBERLANJUTAN 2022",
+				name: "Lampiran 3 LAPORAN KEBERLANJUTAN 2022",
 				url: "/investor/sustainability_reports/2022/Lampiran 3 LAPORAN KEEBERLANJUTAN 2022.pdf",
 				type: "pdf",
 			},

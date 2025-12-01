@@ -23,7 +23,7 @@ export default function Page() {
 	const handleDownload = () => {
 		const link = document.createElement("a");
 		link.href = PDF_FILE;
-		link.download = PDF_TITLE + ".pdf";
+		link.download = `${PDF_TITLE}.pdf`;
 		link.click();
 	};
 

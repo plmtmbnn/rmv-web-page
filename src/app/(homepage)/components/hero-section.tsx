@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const heroContent = [
 	{
@@ -18,7 +18,7 @@ const heroContent = [
 		title: "Pembiayaan tepat",
 		subtitle: "bagi UMKM",
 		description:
-			"Memberikan akses permodalan yang mudah dan terjangkau agak UMKM dapat berkembang, bertumbuh, dan memperluas peluang.",
+			"Memberikan akses permodalan yang mudah dan terjangkau agar UMKM dapat berkembang, bertumbuh, dan memperluas peluang.",
 	},
 ];
 
@@ -145,7 +145,7 @@ export const HeroSection = () => {
 						<div className="flex gap-2">
 							{heroContent.map((_, index) => (
 								<button
-									key={index}
+									key={String(index)}
 									onClick={() => goToSlide(index)}
 									disabled={isAnimating}
 									className={`transition-all duration-300 rounded-full ${
