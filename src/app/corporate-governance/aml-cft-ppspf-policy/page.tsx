@@ -13,7 +13,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const PDF_FILE =
-	"/corporate-governance/Lampiran 5.a. PEDOMAN APU, PPT, PPSPM RMV.pdf";
+	"/corporate-governance/lampiran_5a_pedoman_apu_ppt_ppspm_rmv.pdf";
 const PDF_TITLE = "Kebijakan APU/PPT/PPSPM";
 
 export default function PDFPreviewPage() {

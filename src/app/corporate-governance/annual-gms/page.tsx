@@ -38,7 +38,7 @@ const financialReports: YearReport[] = [
 		files: [
 			{
 				name: "Lampiran 9 Keputusan RUPS T 2023",
-				url: "/corporate-governance/annual-gms/Lampiran 9 Keputusan RUPS T 2023.pdf",
+				url: "/corporate-governance/annual-gms/lampiran_9_keputusan_rups_t_2023.pdf",
 				type: "pdf",
 			},
 		],
@@ -48,7 +48,7 @@ const financialReports: YearReport[] = [
 		files: [
 			{
 				name: "Lampiran 8 Keputusan RUPS T 2022",
-				url: "/corporate-governance/annual-gms/Lampiran 8 Keputusan RUPS T 2022.pdf",
+				url: "/corporate-governance/annual-gms/lampiran_8_keputusan_rups_t_2022.pdf",
 				type: "pdf",
 			},
 		],

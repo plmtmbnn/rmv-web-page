@@ -13,7 +13,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const PDF_FILE =
-	"/corporate-governance/Lampiran 12 Pernyataan APU PPT PPSPM 2025.pdf";
+	"/corporate-governance/lampiran_12_pernyataan_apu_ppt_ppspm_2025.pdf";
 const PDF_TITLE = "Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme";
 
 export default function PDFPreviewPage() {

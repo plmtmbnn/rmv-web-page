@@ -13,7 +13,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const PDF_FILE =
-	"/corporate-governance/Lampiran 6 Akta Perubahan AD + SK 2024.pdf";
+	"/corporate-governance/lampiran_6_akta_perubahan_ad_sk_2024.pdf";
 const PDF_TITLE = "Anggaran Dasar";
 
 export default function PDFPreviewPage() {

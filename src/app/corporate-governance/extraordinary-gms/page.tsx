@@ -34,7 +34,7 @@ const financialReports: YearReport[] = [
 		files: [
 			{
 				name: "Lampiran 10 Keputusan RUPS LB 2024",
-				url: "/corporate-governance/extraordinary-gms/Lampiran 10 Keputusan RUPS LB 2024.pdf",
+				url: "/corporate-governance/extraordinary-gms/lampiran_10_keputusan_rups_lb_2024.pdf",
 				type: "pdf",
 			},
 		],
