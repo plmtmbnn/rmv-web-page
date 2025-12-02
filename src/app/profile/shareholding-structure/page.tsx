@@ -7,7 +7,7 @@ export default function ShareholdingStructurePage() {
 				<header className="mb-12">
 					<h1 className="text-4xl md:text-5xl font-serif leading-tight text-black">
 						Struktur Kepemilikan Saham{" "}
-						<span className="text-[#ED3424]">Reliance Modal Ventura</span>
+						<span className="text-[#ED3424]">PT Reliance Modal Ventura</span>
 					</h1>
 				</header>
 
