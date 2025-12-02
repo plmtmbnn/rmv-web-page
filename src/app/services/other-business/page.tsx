@@ -41,7 +41,7 @@ export default function OtherBusinessArticle() {
 					{/* Content */}
 					<div className="prose prose-lg max-w-none">
 						{/* Introduction */}
-						<p className="text-lg text-slate-700 leading-relaxed mb-8">
+						<p className="text-lg text-slate-700 leading-relaxed mb-8 text-justify">
 							Sesuai dengan Peraturan Otoritas Jasa Keuangan (POJK) Nomor 25
 							Tahun 2023 Tentang Penyelenggaraan Usaha Perusahaan Modal Ventura
 							dan Perusahaan Modal Ventura Syariah, Perusahaan dapat

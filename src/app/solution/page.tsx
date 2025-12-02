@@ -20,7 +20,7 @@ export default function SolutionPage() {
 					<h1 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6 text-slate-900">
 						Solusi Keuangan
 					</h1>
-					<p className="text-lg md:text-xl text-slate-600 max-w-3xl">
+					<p className="text-lg md:text-xl text-slate-600 max-w-3xl text-justify">
 						Solusi keuangan komprehensif untuk mendukung pertumbuhan bisnis dan
 						investasi Anda dengan layanan terpercaya dan inovatif.
 					</p>
@@ -71,7 +71,7 @@ export default function SolutionPage() {
 									</div>
 
 									{/* Description */}
-									<p className="text-sm md:text-base text-white leading-relaxed max-w-prose backdrop-blur-sm bg-black/10 p-4 rounded-xl">
+									<p className="text-sm md:text-base text-white leading-relaxed max-w-prose backdrop-blur-sm bg-black/10 p-4 rounded-xl text-justify">
 										{solution.description}
 									</p>
 								</div>
@@ -129,7 +129,7 @@ export default function SolutionPage() {
 								<h4 className="text-xl md:text-2xl font-bold text-[#0F3A65] mb-3">
 									INTEGRATED FINTECH
 								</h4>
-								<p className="text-sm text-slate-600 leading-relaxed">
+								<p className="text-sm text-slate-600 leading-relaxed text-justify">
 									Platform teknologi finansial terintegrasi untuk kemudahan
 									transaksi digital.
 								</p>
@@ -160,7 +160,7 @@ export default function SolutionPage() {
 								<h4 className="text-2xl md:text-3xl font-bold mb-4">
 									FINANCING SOLUTIONS
 								</h4>
-								<p className="text-sm md:text-base text-blue-100 leading-relaxed max-w-2xl">
+								<p className="text-sm md:text-base text-blue-100 leading-relaxed max-w-2xl text-justify">
 									Sarana pembiayaan kami, Reliance Finance, Reliance Modal
 									Ventura dan bank mitra, menawarkan akses terhadap modal untuk
 									bisnis dan konsumen dengan syarat yang kompetitif.

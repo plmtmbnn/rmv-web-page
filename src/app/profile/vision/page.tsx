@@ -14,7 +14,7 @@ export default function VisionPage() {
 						<h2 className="mt-10 text-xl font-semibold text-black">
 							Visi Perusahaan
 						</h2>
-						<p className="mt-4 text-gray-700 leading-relaxed">
+						<p className="mt-4 text-gray-700 leading-relaxed text-justify">
 							Menjadi Perusahaan Modal Ventura terkemuka di Indonesia sebagai
 							bagian dari jasa keuangan terintegrasi Reliance Group dan
 							pemberdayaan ekonomi masyarakat sektor usaha rintisan awal
@@ -24,7 +24,7 @@ export default function VisionPage() {
 						<h2 className="mt-10 text-xl font-semibold text-black">
 							Misi Perusahaan
 						</h2>
-						<ul className="mt-4 space-y-3 text-gray-700 leading-relaxed list-disc list-inside">
+						<ul className="mt-4 space-y-3 text-gray-700 leading-relaxed list-disc pl-6 text-justify">
 							<li>
 								Memberikan solusi pembiayaan kepada Pasangan Usaha melalui
 								penyertaan modal dan/atau penyertaan melalui pembelian obligasi

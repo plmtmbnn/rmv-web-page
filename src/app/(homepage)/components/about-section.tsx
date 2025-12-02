@@ -187,7 +187,7 @@ export const AboutSection: React.FC = () => {
 								</h3>
 
 								<div className="space-y-6 text-slate-600 md:text-lg leading-relaxed">
-									<p>
+									<p className="text-justify">
 										Didirikan berdasarkan akta Nomor 116 tanggal 6 Juni 2015
 										dihadapan Rosita Rianauli Sianipar, SH, M.Kn, Notaris di
 										Jakarta.

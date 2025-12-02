@@ -17,7 +17,7 @@ export default function AboutPage() {
 						</p>
 
 						<div className="mt-6 prose prose-sm md:prose-base max-w-none text-gray-700">
-							<p>
+							<p className="mt-2.5 text-justify">
 								Adalah perusahaan yang didirikan berdasarkan akta Nomor 116
 								tanggal 5 Juni tahun 2015 yang dibuat dihadapan Rosita Rianauli
 								Sianipar, SH, M.Kn, Notaris di Jakarta, dan telah memperoleh
@@ -25,7 +25,7 @@ export default function AboutPage() {
 								AHU-2443277.AH.01.01.Tahun 2015 tanggal 11 Juni 2015.
 							</p>
 
-							<p>
+							<p className="mt-2.5 text-justify">
 								Sesuai pasal 3 Anggaran Dasar Perusahaan, maksud dan tujuan
 								Perusahaan ialah bergerak di bidang Perusahaan Modal Ventura
 								berbentuk Venture Capital Corporation. Untuk mencapai maksud dan
@@ -39,7 +39,7 @@ export default function AboutPage() {
 								pengembangan usaha, dan/atau pembiayaan usaha produktif.
 							</p>
 
-							<p className="mt-2.5">
+							<p className="mt-2.5 text-justify">
 								Struktur Modal Perusahaan terdiri dari Modal Dasar sejumlah
 								Rp.50.000.000.000 yang terbagi atas 50.000 saham masing-masing
 								saham senilai Rp 1.000.000. Dari Modal Dasar tersebut telah
