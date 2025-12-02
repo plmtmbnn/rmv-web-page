@@ -34,7 +34,7 @@ const financialReports: YearReport[] = [
 		files: [
 			{
 				name: "Lampiran 1.c. Tahun Buku 2024",
-				url: "/investor/financial_reports/2023/lampiran_1c_tahun_buku_2024.pdf",
+				url: "/investor/financial_reports/2024/lampiran_1c_tahun_buku_2024.pdf",
 				type: "pdf",
 			},
 		],
